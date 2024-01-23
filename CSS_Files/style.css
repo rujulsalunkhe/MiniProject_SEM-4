@@ -2,13 +2,14 @@
     margin: 0px;
     padding: 0px;
 }
-:root{
-    --bg-color:#D7D7D7;
-    --second-bg-color:#bcbcbc;
-    --block-color:#484848;
-    --element-color:#FF9341;
-    --text-color:#7F7B7B;
-    --white:#ffffff;
+
+:root {
+    --bg-color: #D7D7D7;
+    --second-bg-color: #bcbcbc;
+    --block-color: #484848;
+    --element-color: #FF9341;
+    --text-color: #7F7B7B;
+    --white: #ffffff;
 }
 
 html {
@@ -77,5 +78,5 @@ html {
 }
 
 #getquote {
-    
+    float: right;
 }
