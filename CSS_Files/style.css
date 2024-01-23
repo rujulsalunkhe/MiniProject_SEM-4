@@ -27,11 +27,12 @@ html {
     align-items: center;
     position: sticky;
     top: 0px;
+
 }
 
 #navbar::before {
     content: "";
-    background-color: black;
+
     position: absolute;
     top: 0px;
     left: 0px;
@@ -42,6 +43,7 @@ html {
 }
 
 /* Navigation Bar: logo and image */
+
 #logo {
     margin: 10px 20px;
 }
@@ -65,7 +67,7 @@ html {
 
 #navbar ul li a {
     display: block;
-    color: white;
+    color: var(--text-color);
     padding: 3px 22px;
     border-radius: 20px;
     text-decoration: none;
@@ -77,6 +79,4 @@ html {
     color: black;
 }
 
-#getquote {
-    float: right;
-}
+#getquote {}
