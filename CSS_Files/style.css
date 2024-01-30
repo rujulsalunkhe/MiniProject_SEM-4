@@ -27,7 +27,8 @@ html {
     align-items: center;
     position: sticky;
     top: 0px;
-
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
 
 #navbar::before {
@@ -57,6 +58,7 @@ html {
 #navbar ul {
     display: flex;
     font-family: 'Baloo Bhai 2', sans-serif;
+    flex-wrap: wrap;
 }
 
 #navbar ul li {
@@ -79,4 +81,9 @@ html {
     color: black;
 }
 
-#getquote {}
+#getq {
+    text-decoration: none;
+    border: 2px solid var(--element-color);
+    padding: 3px 22px;
+    border-radius: 20px;
+}
