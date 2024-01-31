@@ -340,3 +340,52 @@ footer {
 /*       * must be done * 
         next media query changes at 715
 */
+
+/* background-color: #FF9341;
+text:var(--white);
+}
+#getq a:hover{
+color: #ffffff;
+} 
+.services h2{
+margin-bottom: 5rem;
+justify-content: center;
+align-items: center;
+text-align: center;
+}
+
+.services-container{
+display: flex;
+justify-content:center;
+align-items: center;
+flex-wrap: wrap;
+gap: 2rem ;
+}
+.services-container .services-box{
+flex: 1 1 30rem;
+background: var(--white);
+border-radius: 2rem;
+padding: 3rem 2rem 4rem;
+text-align: center;
+border: .2rem solid var(--text-color);
+transition: 0.5s ease;
+}
+
+.services-container .services-box:hover{
+border-color: var(--main-color);
+transform: scale(1.02);
+}
+
+.services-box i{
+font-size: 7rem;
+color: var(--main-color);
+}
+
+.services-box h3{
+font-size: 2.6rem;
+}
+
+.services-box p{
+font-size: 1.6rem;
+margin: 1rem 0 3rem;
+} */
