@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+
 * {
     margin: 0px;
     padding: 0px;
@@ -15,6 +17,12 @@
 
 html {
     scroll-behavior: smooth;
+    background-color: #bcbcbc;
+    transition: 0.2s;
+}
+
+body {
+    background-color: var(--bg-color);
 }
 
 body {
@@ -35,6 +43,7 @@ body {
     justify-content: space-around;
     flex-wrap: wrap;
     z-index: 10;
+    background-color: #bcbcbc;
 }
 
 #navbar::before {
@@ -85,10 +94,6 @@ body {
 #navbar ul li a:hover {
     background-color: white;
     color: var(--text-color);
-}
-
-#navbar ul li a: {
-    color: aqua;
 }
 
 #getq {
