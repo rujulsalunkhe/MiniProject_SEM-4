@@ -1,0 +1,18 @@
+body{
+    background-color:  #D7D7D7;
+    font-family: 'roboto', sans-serif;
+}
+.signup-box{
+    width: 360px;
+    height:620px ;
+    margin: auto;
+    background-color: #FF9341;
+    border-radius: 3px;
+}
+h1{
+    text-align: center;
+    padding-top: 15px;
+}
+h4{
+    text-align: center;
+}

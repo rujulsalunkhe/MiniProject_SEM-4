@@ -11,7 +11,7 @@ body{
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: #484848;
+    background: #ebeaea;
 }
 .container{
     position: relative;
@@ -20,13 +20,18 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #fff;
+    z-index:0;
+    padding: 12rem;
+    box-shadow: 2px 2px rgba(#272626c9);
+    border-radius: 10px;
 }
 .container span{
     position: absolute;
     left: 0;
     width: 32px;
     height: 6px;
-    background: #7f7b7b;
+    background: #fd7600;
     border-radius:8px ;
     transform-origin: 128px;
     transform: scale(2.2) rotate(calc(var(--i)*(360deg / 50)));
@@ -35,10 +40,10 @@ body{
 }
 @keyframes animateBlink{
     0%{
-        background: #FF9341;
+        background: #a34100;
     }
     25%{
-        background:#7f7b7b;
+        background:#fd6a00;
     }
 }
 
@@ -54,7 +59,7 @@ body{
 }
 h2{
     font-size: 2em;
-    color: #FF9341;
+    color: #fff;
     text-align: center;
     }
 .input-box{
@@ -66,18 +71,18 @@ h2{
     width: 100%;
     height: 50px;
     background: transparent;
-    border: 2px solid #7f7b7b;
+    border: 2px solid #ff5900;
     outline: none;
     border-radius: 40px;
     font-size: 1em;
-    color: #fff;
+    color: #ff6a00;
     padding: 0 20px;
     transition: .5s ease;
 }
 .input-box input:focus,
 .input-box input:valid{
     
-   border-color: #FF9341;
+   border-color: #a34100;
 }
 .input-box label{
     position: absolute;
@@ -85,7 +90,7 @@ h2{
     left: 20px;
     transform: translateY(-50%);
     font-size: 1em;
-    color: #fff;
+    color: #ff6600;
     pointer-events: none;
     transition: 0.3s ease;
 }
@@ -94,9 +99,9 @@ h2{
     
     top:1px;
     font-size: .9em;
-    background:#484848;
+    background:#FF9341;
     padding: 0 6px;
-    color: #FF9341;
+    color: #ffffff;
 }
 .forgot-pass{
     text-align: center;
@@ -113,14 +118,17 @@ h2{
 .btn{
     width: 100%;
     height: 45px;
-    background: #FF9341;
+    background: #ff6f00;
     border: none;
     outline: none;
     border-radius: 40px;
     cursor: pointer;
     font-size: 1em;
-    color: #484848;
+    color: #ffffff;
     font-weight: 600;
+}
+.btn:hover{
+    color:#a34100 ;
 }
 .signup-link{
     margin: 20px 0 10px;
@@ -129,11 +137,12 @@ h2{
 }
 .signup-link a{
     text-align: center;
-    color: #FF9341(53, 233, 233);
+    color: #ede9e5(53, 233, 233);
     text-decoration: none;
     font-size: 1em;
     font-weight: 600;
 }
 .signup-link a:hover{
     text-decoration: underline;
+    color: #ffffff;
 }
