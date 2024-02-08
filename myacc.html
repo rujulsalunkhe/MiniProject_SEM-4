@@ -106,8 +106,20 @@
             </div>
         </div>
     </div>
-    <script></script>
+    <script src="jquery.js"></script>
+    <script>
+        const tabBtn=document.querySelectorAll(".tab");
+        const tab=document.querySelectorAll(".tabshow");
 
-
+        function tabs(panelIndex){
+            tab.forEach(function(node){node.style.display="none";
+            });
+            tab[panelIndex].style.display="block";
+        }
+        tabs(0);
+    </script>
+    <script>
+        $(".tab").click(function(){$(this).addClass("active").siblings().removeClass("active");})
+    </script>
 </body>
 </html>

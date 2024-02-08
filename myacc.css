@@ -47,10 +47,12 @@ nav a.active{
 .rightbox{
     width: 60%;
     margin-left: 27%;
+    padding-top: 5px;
 }
 .tabshow{
     transition: all .5s ease-in;
     width: 80%;
+    position: absolute;
 }
 h1{
     font-family: 'Poppins',sans-serif;
