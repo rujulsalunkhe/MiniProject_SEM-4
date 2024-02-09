@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+
 * {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
+    font-family: poppins;
 }
 
 :root {
@@ -18,7 +21,7 @@ html {
 }
 
 body {
-    background-color: var(--bg-color);
+    background-color: #e4e4e4;
 }
 
 /* CSS Variables */
@@ -36,6 +39,7 @@ body {
     flex-wrap: wrap;
     z-index: 10;
     background-color: var(--bg-color);
+
 }
 
 #navbar::before {
@@ -109,6 +113,8 @@ body {
     width: 25px;
     height: 25px;
 }
+
+/* nanvbar ends  */
 
 #home {
     display: flex;
