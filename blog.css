@@ -33,7 +33,7 @@ body {
 }
 
 /* Navigation Bar */
-#navbar {
+#nav{
     display: flex;
     align-items: center;
     position: sticky;
@@ -42,9 +42,10 @@ body {
     flex-wrap: wrap;
     z-index: 10;
     background-color: var(--bg-color);
+
 }
 
-#navbar::before {
+#nav::before {
     content: "";
 
     position: absolute;
@@ -68,36 +69,18 @@ body {
 }
 
 /* Navigation Bar: List Styling */
-#navbar ul {
-    display: flex;
-    font-family: 'Baloo Bhai 2', sans-serif;
-    flex-wrap: wrap;
-}
-
-#navbar ul li {
-    list-style: none;
-    font-size: 1.3rem;
-
-}
-
-#navbar ul li a {
-    display: block;
-    color: black;
-    padding: 3px 22px;
-    border-radius: 20px;
-    text-decoration: none;
-
-}
-
-#navbar ul li a:hover {
-    background-color: white;
+.navbar a{
+    font-size: 1.7rem;
     color: var(--text-color);
+    margin-left: 4rem;
+    transition: 0.5s;
+    text-decoration: none;
 }
-
-#navbar ul li a: {
-    color: aqua;
+.navbar a:hover,
+.navbar a.active{
+    color: var(--main-color);
+    cursor: pointer;
 }
-
 #getq {
     display: flex;
     text-decoration: none;
@@ -116,7 +99,7 @@ body {
     height: 25px;
 }
 
-
+/* nanvbar ends  */
 /*--blogs--*/
 #blog {
     display: flex;
