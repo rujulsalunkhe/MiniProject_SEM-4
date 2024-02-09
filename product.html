@@ -5,39 +5,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product</title>
-    <link rel="stylesheet" href="product.css">
+    <link rel="stylesheet" href="./CSS_Files/product.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <link rel="shortcut icon" href="./favicon_io/favicon.ico">
 </head>
 
 <body>
-        <!--navbar-->
-    
-        <nav id="nav">
-            <div id="logo">
-                <img src="./logo w name.png" alt="logo">
-            </div>
-            <div class="right">
-    
-                    <nav class="navbar">
-                        <a href="#home" >Home</a>
-                        <a href="#about" class="active">Store</a>
-                        <a href="#services" >blogs</a>
-                        <a href="#portfolio">Contact Us</a>
-                        <a href="#contact">Cart</a>
-                       </nav>
-                
-    
-                    <a href="#" id="getq">Login <img id="arrow" src="./Img_files/maki_arrow.svg" alt="">
-                    </a>
-            
-            </div>
-        </nav>
-        
+    <!--navbar-->
+    <nav id="navbar">
+        <div id="logo">
+            <img src="./logo w name.png" alt="logo">
+        </div>
+        <div class="right">
+
+            <ul>
+                <li><a class="item" href="#home">Home </a></li>
+                <li><a class="item " href="#"><span id="item-inuse">Store </span></a></li>
+                <li><a class="item" href="#">Blogs</a></li>
+                <li><a class="item" href="#">Cart</a></li>
+                <li><a class="item" href="#">Contact Us</a></li>
+
+                <a href="#" id="getq">Login <img id="arrow" src="./Img_files/maki_arrow.svg" alt="">
+                </a>
+            </ul>
+        </div>
+    </nav>
     <!--navbar ends-->
+
+
     <div class="smallcontainer single-product">
         <div class="row">
             <div class="col2">
-                <img src="./Img_files/img1.jpg"  id="Productimg" alt="">
+                <img src="./Img_files/img1.jpg" id="Productimg" alt="">
 
                 <div class="small-img-row">
                     <div class="small-img-col">
@@ -74,40 +74,36 @@
                 <h3>Product details</h3>
                 <br>
                 <p>
-                    "Discover the modern elegance of acrylic kitchens. 
+                    "Discover the modern elegance of acrylic kitchens.
                     Sleek, durable, and versatile, acrylic surfaces
-                     offer a seamless blend of style and functionality.
-                      With a range of colors and finishes, create a 
-                      contemporary culinary space that's both visually
-                       stunning and easy to maintain."</p>
-                <p><b>Note:</b><br>The Product is  a representation of the 
-                available products for a modular kitchen that we provide .The 
-                customer gets to select the products as per their requirements
-                 and get a quote </p>
+                    offer a seamless blend of style and functionality.
+                    With a range of colors and finishes, create a
+                    contemporary culinary space that's both visually
+                    stunning and easy to maintain."</p>
+                <p><b>Note:</b><br>The Product is a representation of the
+                    available products for a modular kitchen that we provide .The
+                    customer gets to select the products as per their requirements
+                    and get a quote </p>
             </div>
 
         </div>
 
     </div>
     <script>
-        var Productimg=document.getElementById("Productimg");
-        var smallimg=document.getElementsByClassName("small-img");
+        var Productimg = document.getElementById("Productimg");
+        var smallimg = document.getElementsByClassName("small-img");
 
-        smallimg[0].onclick = function()
-        {
-            Productimg.src =smallimg[0].src;
+        smallimg[0].onclick = function () {
+            Productimg.src = smallimg[0].src;
         }
-        smallimg[1].onclick = function()
-        {
-            Productimg.src =smallimg[1].src;
+        smallimg[1].onclick = function () {
+            Productimg.src = smallimg[1].src;
         }
-        smallimg[2].onclick = function()
-        {
-            Productimg.src =smallimg[2].src;
+        smallimg[2].onclick = function () {
+            Productimg.src = smallimg[2].src;
         }
-        smallimg[3].onclick = function()
-        {
-            Productimg.src =smallimg[3].src;
+        smallimg[3].onclick = function () {
+            Productimg.src = smallimg[3].src;
         }
     </script>
     <!--footer-->
@@ -118,21 +114,23 @@
             <div class="col">
                 <img src="./logo.jpg" alt="logo"><br>
                 <p>
-                    "Transform your space with our curated 
-                    collection of stylish and functional furniture. 
+                    "Transform your space with our curated
+                    collection of stylish and functional furniture.
                     From cozy seating to elegant accents, discover
                     the perfect pieces to elevate your home. Shop
-                     now for quality craftsmanship and timeless designs."
+                    now for quality craftsmanship and timeless designs."
                 </p>
             </div>
             <div class="col">
-                <h3>Office <div class="underline"></div></h3>
+                <h3>Office <div class="underline"></div>
+                </h3>
                 <p>Yet to be filled</p>
                 <p class="email-id">homebeing@outlook.com</p>
                 <h4>+91 - xxxxx xxxxx</h4>
             </div>
             <div class="col">
-                <h3>Links <div class="underline"></div></h3>
+                <h3>Links <div class="underline"></div>
+                </h3>
                 <ul>
                     <li><a href="">Home</a></li>
                     <li><a href="">Services</a></li>
@@ -142,7 +140,8 @@
                 </ul>
             </div>
             <div class="col">
-                <h3>Newsletter <div class="underline"></div></h3>
+                <h3>Newsletter <div class="underline"></div>
+                </h3>
                 <form>
                     <i class='bx bx-envelope'></i>
                     <input type="email" placeholder="enter your email id" required>

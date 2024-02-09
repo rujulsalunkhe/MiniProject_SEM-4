@@ -4,7 +4,6 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
-    font-family: poppins;
 }
 
 :root {
@@ -21,39 +20,8 @@ html {
 }
 
 body {
-    background-color: #e5e5e5;
-    box-sizing: border-box;
-}
-
-/* CSS Variables */
-:root {
-    --navbar-height: 59px;
-}
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
-
-* {
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
-    font-family: poppins;
-}
-
-:root {
-    --bg-color: #D7D7D7;
-    --second-bg-color: #bcbcbc;
-    --block-color: #484848;
-    --element-color: #FF9341;
-    --text-color: #7F7B7B;
-    --white: #ffffff;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    background-color: #e4e4e4;
+    background-color: rgb(243, 243, 243);
+    font-family: 'Poppins', sans-serif;
 }
 
 /* CSS Variables */
@@ -70,8 +38,7 @@ body {
     justify-content: space-around;
     flex-wrap: wrap;
     z-index: 10;
-    background-color: var(--block-color);
-    color: white;
+    background-color: var(--bg-color);
 }
 
 #navbar::before {
@@ -98,10 +65,12 @@ body {
 }
 
 /* Navigation Bar: List Styling */
+
 #navbar ul {
     display: flex;
     font-family: 'Baloo Bhai 2', sans-serif;
     flex-wrap: wrap;
+    color: var(--text-color);
 }
 
 #navbar ul li {
@@ -112,21 +81,25 @@ body {
 
 #navbar ul li a {
     display: block;
-    color: white;
     padding: 3px 22px;
     border-radius: 20px;
     text-decoration: none;
+    color: var(--text-color);
 
 }
+
+/* .item {
+    color: var(--text-color);
+} */
 
 #navbar ul li a:hover {
-    background-color: white;
-    color: var(--text-color);
+    /* background-color: white; */
+    color: black;
 }
 
-#navbar ul li a: {
+/* #navbar ul li a: {
     color: aqua;
-}
+} */
 
 #getq {
     display: flex;
@@ -146,6 +119,12 @@ body {
     height: 25px;
 }
 
+
+#item-inuse {
+    color: var(--element-color);
+}
+
+
 /* nanvbar ends  */
 
 /* .home {
@@ -155,7 +134,7 @@ body {
 
 .block-color {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     position: relative;
     background-color: var(--block-color);
@@ -168,7 +147,8 @@ body {
     position: relative;
     top: 50px;
     margin: auto;
-    padding: 10px;
+    padding: 11px;
+    width: 311px;
 }
 
 .home-txt {

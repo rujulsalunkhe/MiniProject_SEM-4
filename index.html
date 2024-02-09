@@ -4,33 +4,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>This is Test</title>
+    <title>Home</title>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <link rel="stylesheet" href="./CSS_Files/style.css">
+<link rel="shortcut icon" href="./favicon_io/favicon.ico">
 
 <body>
 
-    <nav id="nav">
+    <!--navbar-->
+    <nav id="navbar">
         <div id="logo">
             <img src="./logo w name.png" alt="logo">
         </div>
         <div class="right">
 
-                <nav class="navbar">
-                    <a href="#home" class="active">Home</a>
-                    <a href="#about">Store</a>
-                    <a href="#services">blogs</a>
-                    <a href="#portfolio">Contact Us</a>
-                    <a href="#contact">Cart</a>
-                   </nav>
-            
+            <ul>
+                <li><a class="item" href="#home"><span id="item-inuse">Home </span></a></li>
+                <li><a class="item " href="#">Store</a></li>
+                <li><a class="item" href="#">Blogs</a></li>
+                <li><a class="item" href="#">Cart</a></li>
+                <li><a class="item" href="#">Contact Us</a></li>
 
                 <a href="#" id="getq">Login <img id="arrow" src="./Img_files/maki_arrow.svg" alt="">
                 </a>
-        
+            </ul>
         </div>
     </nav>
+    <!--navbar ends-->
+
 
     <section id="home">
         <div class="block-color">
@@ -82,7 +84,7 @@
                     ipsum dolor sit amet consectetur adipisicing elit. Eaque </p>
             </div>
             <br>
-            
+
             <div class="box">
                 <img src="./Img_files/index imgs/drawing.jpg" alt="Room Img">
                 <h2 class="h-secondary">Consultation</h2>
@@ -108,7 +110,7 @@
 
         <section class="first">
             <div>
-                
+
                 <span>Quality <span class="orange">Craftsmanship</span></span>
                 <span>You can trust that each item is made with care, using premium materials to enhance both aesthetics
                     and longevity.</span>
@@ -147,6 +149,8 @@
         </section>
     </section>
 
+
+
     <section class="about-us">
 
         <h1 class="h-primary center">
@@ -156,7 +160,7 @@
         </h1>
 
         <section class="first">
-            <div>
+            <div class="about-txt">
                 What began as a college project evolved into a comprehensive website initiated by four classmates.
                 Specializing in services for new homes, the platform focuses on modular kitchens and various home
                 essentials. This student-driven venture seamlessly transitioned from academia to reality, showcasing the
@@ -165,67 +169,70 @@
                 drive of the original four classmates.
             </div>
 
-            <div class="secImg">
+            <div class="about-img">
                 <img src="./Img_files/product_img-3.jpeg" alt="">
 
             </div>
         </section>
     </section>
-
+    <!-- 
     <section class="blogs">
 
 
-    </section>
+    </section> -->
 
 
 
     <!-- footer starts here -->
-<footer>
-    <div class="row">
-        <div class="col">
-            <img src="./logo.jpg" alt="logo"><br>
-            <p>
-                "Transform your space with our curated 
-                collection of stylish and functional furniture. 
-                From cozy seating to elegant accents, discover
-                the perfect pieces to elevate your home. Shop
-                 now for quality craftsmanship and timeless designs."
-            </p>
-        </div>
-        <div class="col">
-            <h3>Office <div class="underline"></div></h3>
-            <p>Yet to be filled</p>
-            <p class="email-id">homebeing@outlook.com</p>
-            <h4>+91 - xxxxx xxxxx</h4>
-        </div>
-        <div class="col">
-            <h3>Links <div class="underline"></div></h3>
-            <ul>
-                <li><a href="">Home</a></li>
-                <li><a href="">Services</a></li>
-                <li><a href="">About Us</a></li>
-                <li><a href="">Features</a></li>
-                <li><a href="">Contacts</a></li>
-            </ul>
-        </div>
-        <div class="col">
-            <h3>Newsletter <div class="underline"></div></h3>
-            <form>
-                <i class='bx bx-envelope'></i>
-                <input type="email" placeholder="enter your email id" required>
-                <button type="submit"><i class='bx bxs-right-arrow-alt'></i></button>
-            </form>
-            <div class="social-icons">
-                <i class='bx bxl-facebook-square'></i>
-                <i class='bx bxl-whatsapp'></i>
-                <i class='bx bxl-twitter'></i>
-                <i class='bx bxl-instagram'></i>
+    <footer>
+        <div class="row">
+            <div class="col">
+                <img src="./logo.jpg" alt="logo"><br>
+                <p>
+                    "Transform your space with our curated
+                    collection of stylish and functional furniture.
+                    From cozy seating to elegant accents, discover
+                    the perfect pieces to elevate your home. Shop
+                    now for quality craftsmanship and timeless designs."
+                </p>
+            </div>
+            <div class="col">
+                <h3>Office <div class="underline"></div>
+                </h3>
+                <p>Yet to be filled</p>
+                <p class="email-id">homebeing@outlook.com</p>
+                <h4>+91 - xxxxx xxxxx</h4>
+            </div>
+            <div class="col">
+                <h3>Links <div class="underline"></div>
+                </h3>
+                <ul>
+                    <li><a href="">Home</a></li>
+                    <li><a href="">Services</a></li>
+                    <li><a href="">About Us</a></li>
+                    <li><a href="">Features</a></li>
+                    <li><a href="">Contacts</a></li>
+                </ul>
+            </div>
+            <div class="col">
+                <h3>Newsletter <div class="underline"></div>
+                </h3>
+                <form>
+                    <i class='bx bx-envelope'></i>
+                    <input type="email" placeholder="enter your email id" required>
+                    <button type="submit"><i class='bx bxs-right-arrow-alt'></i></button>
+                </form>
+                <div class="social-icons">
+                    <i class='bx bxl-facebook-square'></i>
+                    <i class='bx bxl-whatsapp'></i>
+                    <i class='bx bxl-twitter'></i>
+                    <i class='bx bxl-instagram'></i>
+                </div>
             </div>
         </div>
-    </div>
-    <hr>
-    <p class="copyright"> Home Being 2024 - All Rights Reserved</p>
-</footer>
+        <hr>
+        <p class="copyright"> Home Being 2024 - All Rights Reserved</p>
+    </footer>
 </body>
 
 </html>
