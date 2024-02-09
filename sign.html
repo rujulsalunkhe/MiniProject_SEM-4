@@ -11,19 +11,19 @@
       <form action="#">
         <h2>SignUp</h2>
         <div class="input-field">
-            <input type="name" required>
+            <input type="name" id="name" required >
             <label>Enter your full name</label>
           </div>
           <div class="input-field">
-          <input type="text" required>
+          <input type="text" id="email" required>
           <label>Enter your email</label>
         </div>
         <div class="input-field">
-          <input type="password" required>
+          <input type="password" id="password" required>
           <label>Create Password</label>
         </div>
         <div class="input-field">
-            <input type="cpassword" required>
+            <input type="cpassword" id="cpassword" required>
             <label>Confirm Password</label>
           </div>
         <div class="tnc">
@@ -33,11 +33,27 @@
           </label>
           
         </div>
-        <button type="submit">Sign Up</button>
+        <button type="submit" class="submit-btn" onclick="auth()">Sign In</button>
         <div class="register">
           <p>Already have an account? <a href="log.html">Login</a></p>
         </div>
       </form>
     </div>
+    <script>
+      function auth(){
+        var password=document.getElementById("name").value;
+        var email=document.getElementById("email").value;
+        var password=document.getElementById("password").value;
+        var password=document.getElementById("cpassword").value;
+        if(name=="khushi sharma" && email=="admin@gmail.com" && password=="admin123" && cpassword=="admin123"){
+          window.location.assign("index.html");
+          alert("Account Created Successfully !");
+        }
+        else {
+          alert("Incorrect Information provided");
+          return;
+        }
+      }
+    </script>
   </body>
 </html>

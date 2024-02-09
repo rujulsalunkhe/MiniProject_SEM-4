@@ -11,11 +11,11 @@
     <form action="#">
       <h2>Login</h2>
         <div class="input-field">
-        <input type="text" required>
+        <input type="text" id="email" required>
         <label>Enter your email</label>
       </div>
       <div class="input-field">
-        <input type="password" required>
+        <input type="password" id="password" required>
         <label>Enter your password</label>
       </div>
       <div class="forget">
@@ -25,11 +25,25 @@
         </label>
         <a href="#">Forgot password?</a>
       </div>
-      <button type="submit">Log In</button>
+      <button type="submit" class="submit-btn" onclick="auth()">Log In</button>
       <div class="register">
         <p>Don't have an account? <a href="sign.html">Register</a></p>
       </div>
     </form>
   </div>
+  <script>
+    function auth(){
+      var email=document.getElementById("email").value;
+      var password=document.getElementById("password").value;
+      if(email=="admin@gmail.com" && password=="admin123"){
+        window.location.assign("index.html");
+        alert("Login Successful !");
+      }
+      else{
+        alert("Incorrect Email-Id or Password");
+        return;
+      }
+    }
+  </script>
 </body>
 </html>

@@ -9,6 +9,92 @@
 body {
     font-family: 'Poppins', sans-serif;
 }
+/* Navigation Bar */
+#navbar {
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0px;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    z-index: 10;
+    background-color: var(--bg-color);
+
+}
+
+#navbar::before {
+    content: "";
+
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    opacity: 0.3;
+}
+
+/* Navigation Bar: logo and image */
+
+#logo {
+    margin: 10px 20px;
+}
+
+#logo img {
+    height: 59px;
+    margin: 3px 6px;
+}
+
+/* Navigation Bar: List Styling */
+#navbar ul {
+    display: flex;
+    font-family: 'Baloo Bhai 2', sans-serif;
+    flex-wrap: wrap;
+}
+
+#navbar ul li {
+    list-style: none;
+    font-size: 1.3rem;
+
+}
+
+#navbar ul li a {
+    display: block;
+    color: black;
+    padding: 3px 22px;
+    border-radius: 20px;
+    text-decoration: none;
+
+}
+
+#navbar ul li a:hover {
+    background-color: white;
+    color: var(--text-color);
+}
+
+#navbar ul li a: {
+    color: aqua;
+}
+
+#getq {
+    display: flex;
+    text-decoration: none;
+    padding: 3px 22px;
+    border-radius: 20px;
+    color: white;
+    background-color: var(--element-color);
+    align-items: center;
+    justify-content: center;
+
+}
+
+#arrow {
+    padding-left: 7px;
+    width: 25px;
+    height: 25px;
+}
+
+/* nanvbar ends  */
 
 .smallcontainer {
     max-width: 1000px;
@@ -34,8 +120,9 @@ body {
 }
 
 .col2 img {
-    max-width: 100%;
+   max-width: 100%;
     padding: 20px 0;
+   
 }
 
 #Productimg {
