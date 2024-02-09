@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+
 * {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
+    font-family: poppins;
 }
 
 :root {
@@ -109,6 +112,8 @@ body {
     width: 25px;
     height: 25px;
 }
+
+/* nanvbar ends  */
 
 #home {
     display: flex;
