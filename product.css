@@ -1,72 +1,85 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
-*{
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body{
-    font-family: 'Poppins',sans-serif;
-   
-
+body {
+    font-family: 'Poppins', sans-serif;
 }
-.smallcontainer{
+
+.smallcontainer {
     max-width: 1000px;
     margin: auto;
     padding-left: 25px;
     padding-right: 20px;
 }
-.row{
+
+.row {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
     justify-content: space-around;
 }
-.single-product{
+
+.single-product {
     margin-top: 80px;
 }
-.small-img-row{
+
+.small-img-row {
     display: flex;
     justify-content: space-around;
 }
-.col2 img{
+
+.col2 img {
     max-width: 100%;
     padding: 20px 0;
 }
-#Productimg{
+
+#Productimg {
     width: 2000px;
 }
-.small-img-col{
+
+.small-img-col {
     flex-basis: 24%;
     cursor: pointer;
 }
-.single-product .col2 img{
+
+.single-product .col2 img {
     padding: 5;
 }
-.single-product .col2{
+
+.single-product .col2 {
     padding: 10px;
 }
-.col2{
+
+.col2 {
     flex-basis: 50%;
     width: 800px;
     float: left;
 }
-.col2 h1{
+
+.col2 h1 {
     font-size: 50px;
     line-height: 60px;
     margin: 25px 0;
 }
-.single-product select{
+
+.single-product select {
     display: block;
     padding: 10px;
     margin-top: 20px;
 }
-.single-product h4{
+
+.single-product h4 {
     margin: 20px 0;
     font-size: 22px;
     font-weight: bold;
 }
-.single-product input{
+
+.single-product input {
     width: 50px;
     height: 40px;
     padding-left: 10px;
@@ -74,22 +87,26 @@ body{
     margin-right: 10px;
     border: 1px solid #ff7c02;
 }
-.input:focus{
+
+.input:focus {
     outline: none;
 }
-a{
+
+a {
     text-decoration: none;
     color: #555;
 }
+
 /*.single-product .fa{
     color: #555;
     margin-left: 10px;
 }*/
 
-p{
+p {
     color: #555;
 }
-.btn{
+
+.btn {
     display: inline-block;
     background: #ff5e00;
     color: #fff;
@@ -98,6 +115,7 @@ p{
     border-radius: 30px;
     transition: background 0.5s;
 }
-.btn:hover{
+
+.btn:hover {
     background: #952a00;
 }
