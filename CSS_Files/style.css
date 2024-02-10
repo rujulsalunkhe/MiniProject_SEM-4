@@ -204,6 +204,7 @@ body {
     width: 400px;
     height: 475px;
     margin-bottom: 20px;
+    z-index: 1;
 }
 
 .rec1 {
@@ -214,7 +215,7 @@ body {
     background-color: var(--second-bg-color);
     width: 30%;
     height: 50%;
-    z-index: -1;
+    z-index: 0;
 }
 
 /* Services Section  */
