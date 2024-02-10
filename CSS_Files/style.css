@@ -99,7 +99,6 @@ body {
     color: black;
 }
 
-<<<<<<< Updated upstream
 /* #navbar ul li a: {
     color: aqua;
 } */
@@ -485,27 +484,3 @@ hr {
 /*       * must be done * 
         next media query changes at 715
 */
-=======
-.btn1 {
-    margin-right:5%;
-    margin-top: .5%;
-    }
-#getq.btn{
-    display: inline-block;
-    padding: 1rem 1.8rem;
-    background: var(--element-color);
-    border-radius:4rem ;
-    box-shadow: 0 0 1rem var(--text-color);
-    font-size: 3 rem;
-    color: var(--white);
-    letter-spacing: 0.1rem;
-    font-weight: 600;
-    transition: 0.3s;
-    text-decoration: none;
-   
-}
-#getq.btn:hover{
-    color:#484848;
-    box-shadow: none;
-}
->>>>>>> Stashed changes
