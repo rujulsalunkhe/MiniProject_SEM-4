@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
 
 * {
     margin: 0px;
@@ -33,7 +33,7 @@ body {
     padding: 0px;
     font-family: poppins;
     background-color: rgb(243, 243, 243);
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Jakarta', sans-serif;
 }
 
 /* Navigation Bar */
@@ -274,7 +274,7 @@ body {
 
 footer {
     width: 100%;
-    position: absolute;
+   
     color: #ffffff;
     background: linear-gradient(to right, #af5301, #ff6600);
     padding: 70px 3px 30px;
