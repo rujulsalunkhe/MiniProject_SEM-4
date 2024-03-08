@@ -1,14 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-
+	<meta charset="UTF-8">
+	<title>Responsive Contact us form Using HTML and CSS</title>
+	<link rel="stylesheet" href="./CSS_Files/contactform.css">
 </head>
-<link rel="stylesheet" href="./CSS_Files/contactform.css">
-
 <body>
 
     <!--navbar-->
@@ -32,43 +28,27 @@
     </nav>
     <!--navbar ends-->
 
-
-    <form>
-        <fieldset>
-            <legend>Contact Us Form</legend>
-
-            Name : <input type="text" name="name" required="" placeholder="Please enter your full name" />
-            <br />
-            <br />
-            Address : <textarea name="address"></textarea>
-            <br />
-            <br />
-            Phone number : <input type="phonenumber" name="phone-number" placeholder="Phone number" maxlength="10">
-            <br />
-            <br />
-            Email-id : <input type="email" name="email" required="" placeholder="Please enter your Email-id">
-            <br />
-            <br />
-            Select the Category:
-            <select>
-                <option value="Modular Kitchen">Modular Kitchen</option>
-                <option> Kitchen</option>
-                <option>Living room</option>
-                <option>Bedroom</option>
-                <option>Consultation</option>
-                <option>Quotation</option>
-            </select>
-            <br />
-            <br />
-            Query : <textarea></textarea>
-            <br /><br />
-            <input type="Submit" value="Send" />
-        </fieldset>
-    </form>
-
-
-    <!-- footer starts here -->
-    <footer>
+	<div class="form">
+<div class="wrapper">
+  <div class="title">
+    <h1>Contact Us Form</h1>
+  </div>
+  <div class="contact-form">
+    <div class="input-fields">
+      <input type="text" class="input" placeholder="Name">
+      <input type="text" class="input" placeholder="Email Address">
+      <input type="text" class="input" placeholder="Phone">
+      <input type="text" class="input" placeholder="Subject">
+    </div>
+    <div class="msg">
+      <textarea placeholder="Message"></textarea>
+      <div class="btn">send</div>
+    </div>
+  </div>
+</div>
+</div>
+	 <!-- footer starts here -->
+     <footer>
         <div class="row">
             <div class="col">
                 <img src="./logo.jpg" alt="logo"><br>
@@ -91,11 +71,11 @@
                 <h3>Links <div class="underline"></div>
                 </h3>
                 <ul>
-                    <li><a href="">Home</a></li>
-                    <li><a href="">Services</a></li>
-                    <li><a href="">About Us</a></li>
-                    <li><a href="">Features</a></li>
-                    <li><a href="">Contacts</a></li>
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./store.html">Store</a></li>
+                    <li><a href="./blogs.html">Blogs</a></li>
+                    <li><a href="./cartt.html">Cart</a></li>
+                    <li><a href="./contactform.html">Contacts Us</a></li>
                 </ul>
             </div>
             <div class="col">
@@ -118,5 +98,4 @@
         <p class="copyright"> Home Being 2024 - All Rights Reserved</p>
     </footer>
 </body>
-
 </html>

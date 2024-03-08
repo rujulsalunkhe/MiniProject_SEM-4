@@ -17,12 +17,12 @@
 
 html {
     scroll-behavior: smooth;
-    background-color: var(--second-bg-color);
+    /* background-color: var(--second-bg-color);/ */
 }
 
 body {
     background-color: rgb(243, 243, 243);
-    font-family: 'Poppins', sans-serif;
+    font-family: 'poppins', sans-serif;
 }
 
 /* CSS Variables */
@@ -39,7 +39,7 @@ body {
     justify-content: space-around;
     flex-wrap: wrap;
     z-index: 10;
-    background-color: var(--bg-color);
+    background-color: rgb(250, 248, 245);
 }
 
 #navbar::before {
@@ -242,7 +242,7 @@ body {
 }
 
 #services .box p {
-    font-family: 'Bree Serif', serif;
+    font-family: 'jakarta', serif;
 }
 
 .h-primary {
@@ -298,7 +298,7 @@ body {
     height: 3px;
     background-color: var(--element-color);
     position: relative;
-    z-index: 20;
+    z-index: 7;
 }
 
 .secImg {
