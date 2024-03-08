@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const Listing = require("./models/listing.js");
 const path = require("path");
 const methodOverride = require("method-override");
+const ejsMate = require("ejs-mate");
 
 const MONGO_URL="mongodb://127.0.0.1:27017/homebeing";
 main().then( () => {
@@ -20,6 +21,8 @@ app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 app.use(express.urlencoded({extended: true}));
 app.use(methodOverride("_method"));
+app.engine('ejs' , ejsMate);
+app.use(express.static(path.join(__dirname, "/public")));
 
 app.get("/", (req, res) => {
     res.send("hi, I am root");
@@ -83,6 +86,21 @@ app.delete("/listings/:id", async (req, res) =>{
 //    console.log("Sample was saved");
 //    res.send("Successful testing");
 // });
+
+
+
+
+
+//////////////// Home Page //////////////////
+
+app.get("/home", async (req,res) => {
+    const allListings = await Listing.find({});
+    res.render("home/home.ejs",{allListings});
+    });
+
+app.use("/Img_files", express.static('Img_files'));
+
+
 app.listen(3000, () =>{
     console.log("Server is listening to port 3000");
 });
