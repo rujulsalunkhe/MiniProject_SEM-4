@@ -128,124 +128,105 @@ body {
 
 /* nanvbar ends  */
 
-/* .home {
-    display: flex;
+/*store*/
+
+.products .heading{
+    text-align: center;
+    font-size: 3rem;
+    color: #494949;
+    padding: 6%;
+}
+
+.products .box-container{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  
+}
+
+.products .box-container .box{
+    flex: 1 1 30rem;
+    box-shadow: 0 .5rem 1.5rem rgba(0,0,0,.1);
+    border-radius: .5rem;
+    border: .1rem solid rgba(0,0,0,.1);
     position: relative;
-} */
-
-.block-color {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    background-color: var(--block-color);
-    color: white;
-    width: 100%;
+   
+}
+.products .box-container .box:hover{
+    transition: 0.2s;
+    transform: scale(1.1);
 }
 
-#home-img {
-    height: 250px;
-    position: relative;
-    top: 50px;
-    margin: auto;
-    padding: 11px;
-    width: 311px;
-}
-
-.home-txt {
-    margin: 30px auto;
-    font-size: 1.6rem;
-}
-
-/* Services Section  */
-#services {
-    display: flex;
-    margin-top: 25px;
-    margin-bottom: 0px;
-
-}
-
-#services .box {
-    border: 2px solid var(--element-color);
-    padding: 15px;
-    margin: 3px 6px;
-    border-radius: 20px;
-    background-color: var(--second-bg-color);
-    margin-bottom: 20px;
-}
-
-#services .box img {
-    height: 150px;
-    margin: auto;
-    display: block;
-
-}
-
-#services .box p {
-    font-family: 'Bree Serif', serif;
-}
-
-.h-primary {
-    font-size: 2.5rem;
-    /* padding: 12px; */
-    font-family: 'Bree Serif', serif;
-    display: flex;
-    position: relative;
-    width: 100%;
-    margin: 60px 0px;
-
-}
-
-.sec-head {
-    background-color: var(--element-color);
-    border: 2px solid var(--element-color);
-    color: white;
-    border-radius: 30px;
-    padding: 3px 30px;
+.products .box-container .box .discount{
+    position: absolute;
+    top: 1rem ;
+    left: 1rem;
+    padding: 7rem 1rem;
+    color: rgb(255, 157, 0);
+    font-size: 2rem;
+    background: rgba(255, 128, 0, 0.05);
     z-index: 1;
+    border-radius:  .5rem;
 }
-
-
-
-.h-secondary {
-    font-size: 2.1rem;
-    padding: 12px;
-    font-family: 'Bree Serif', serif;
-}
-
-.center {
-    align-items: center;
-    justify-content: center;
-}
-
-#product-card {
-    display: flex;
+.products .box-container .box .image{
     position: relative;
-    background-color: var(--block-color);
+    text-align: center;
+    padding-top: 2rem;
+    overflow: hidden;
+}
+.products .box-container .box .image img{
+    height: 25rem;
+    width: 25rem;
+}
+.products .box-container .box:hover .image img{
+     transform: scale(1.1);
+     
+}
+.products .box-container .box .image .icons{
+    position: absolute;
+    bottom:-7rem;
+    left: 0;
+    right: 0;
+    display: flex;
+}
+.products .box-container .box:hover .image .icons{
+    bottom: 0%;
+}
+.products .box-container .box .image .icons a{
+    height: 5rem;
+    line-height: 5rem;
+    font-size: 2rem;
+    width: 50%;
+    background: orange;
     color: white;
-    justify-content: center;
-    align-items: center;
+    text-decoration: none;
+}
+.products .box-container .box .image .icons .cart-btn{
+    border-left:  .1rem solid #fff7;
+    border-right:  .1rem solid #fff7;
+    width: 100%;
 }
 
-.full-img {
-    width: 40vw;
-    height: 85vh;
-    overflow: hidden;
-    /* border: 2px solid var(--element-color); */
+.products .box-container .box .image .icons a:hover{
+    background: #333;
 }
-
-.full-img img {
-    width: 40vw;
-    height: 84vh;
-    overflow: hidden;
+.products .box-container .box .content{
+    padding: 2rem;
+    text-align: center;
 }
-
-.img-option {
-    width: 33vw;
-    height: 80vh;
+.products .box-container .box h3{
+    font-size: 2.5rem;
+    color: #333;
 }
-
-.img-option img {
-    width: 20vw;
-    height: 26vh;
+.products .box-container .box .content .price{
+    font-size: 2.5rem;
+    color: orange;
+    font-weight: bolder;
+    padding-top: 1rem;
 }
+.products .box-container .box .content .price span{
+    font-size: 1.5rem;
+    color: rgb(241, 224, 191);
+    font-weight: lighter;
+    padding-top: 1rem;
+ }
