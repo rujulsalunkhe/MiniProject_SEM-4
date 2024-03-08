@@ -6,7 +6,7 @@ const path = require("path");
 const methodOverride = require("method-override");
 const ejsMate = require("ejs-mate");
 
-const MONGO_URL="mongodb://127.0.0.1:27017/homebeing";
+const MONGO_URL="mongodb+srv://atharva:home@cluster0.uddossk.mongodb.net/";
 main().then( () => {
     console.log("Connected to DB");
 })
@@ -99,6 +99,20 @@ app.get("/home", async (req,res) => {
     });
 
 app.use("/Img_files", express.static('Img_files'));
+
+//////////////// Login & Signup Page //////////////////
+
+app.get("/login", async (req, res) => {
+    const allListings = await Listing.find({});
+    res.render("login/login", { allListings });
+
+});
+
+app.get("/signup", async (req, res) => {
+    const allListings = await Listing.find({});
+    res.render("login/signup", { allListings });
+
+});
 
 
 app.listen(3000, () =>{

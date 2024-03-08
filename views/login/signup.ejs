@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>signup</title>
+  <link rel="stylesheet" href="/css/sign.css">
+
+  <link rel="shortcut icon" href="/favicon_io/favicon.ico">
+
+</head>
+
+<body>
+
+
+  <div class="wrapper">
+    <form action="#">
+      <h2>SignUp</h2>
+      <div class="input-field">
+        <input type="name" id="name" required>
+        <label>Enter your full name</label>
+      </div>
+      <div class="input-field">
+        <input type="text" id="email" required>
+        <label>Enter your email</label>
+      </div>
+      <div class="input-field">
+        <input type="password" id="password" required>
+        <label>Create Password</label>
+      </div>
+      <div class="input-field">
+        <input type="cpassword" id="cpassword" required>
+        <label>Confirm Password</label>
+      </div>
+      <div class="tnc">
+        <label for="agree">
+          <input type="checkbox" id="agree">
+          <p>I agree to all Terms and Conditions</p>
+        </label>
+
+      </div>
+      <button type="submit" class="submit-btn" onclick="auth()">Sign In</button>
+      <div class="register">
+        <p>Already have an account? <a href="/login">Login</a></p>
+      </div>
+    </form>
+  </div>
+  <script>
+    function auth() {
+      var password = document.getElementById("name").value;
+      var email = document.getElementById("email").value;
+      var password = document.getElementById("password").value;
+      var password = document.getElementById("cpassword").value;
+      if (name == "khushi sharma" && email == "admin@gmail.com" && password == "admin123" && cpassword == "admin123") {
+        window.location.assign("index.html");
+        alert("Account Created Successfully !");
+      }
+      else {
+        alert("Incorrect Information provided");
+        return;
+      }
+    }
+  </script>
+</body>
+
+</html>
