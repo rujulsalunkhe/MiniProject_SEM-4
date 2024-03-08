@@ -86,6 +86,21 @@ app.delete("/listings/:id", async (req, res) =>{
 //    console.log("Sample was saved");
 //    res.send("Successful testing");
 // });
+
+
+
+
+
+//////////////// Home Page //////////////////
+
+app.get("/home", async (req,res) => {
+    const allListings = await Listing.find({});
+    res.render("home/home.ejs",{allListings});
+    });
+
+app.use("/Img_files", express.static('Img_files'));
+
+
 app.listen(3000, () =>{
     console.log("Server is listening to port 3000");
 });
