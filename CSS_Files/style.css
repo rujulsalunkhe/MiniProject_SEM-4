@@ -298,7 +298,7 @@ body {
     height: 3px;
     background-color: var(--element-color);
     position: relative;
-    z-index: 20;
+    z-index: 7;
 }
 
 .secImg {
