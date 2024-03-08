@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
-*{
+
+* {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
-    font-family: 'poppins',sans-serif;
+    font-family: 'poppins', sans-serif;
 }
 
 :root {
@@ -15,9 +16,10 @@
     --white: #ffffff;
 }
 
-body{
-    background-color:rgb(250, 248, 245) ;
+body {
+    background-color: rgb(250, 248, 245);
 }
+
 /* Navigation Bar */
 #navbar {
     display: flex;
@@ -27,7 +29,7 @@ body{
     justify-content: space-around;
     flex-wrap: wrap;
     z-index: 10;
-    background-color:rgb(250, 248, 245);
+    background-color: rgb(250, 248, 245);
 }
 
 #navbar::before {
@@ -112,7 +114,7 @@ body{
 
 /* nanvbar ends  */
 
-.heading{
+.heading {
     width: 90%;
     display: flex;
     justify-content: center;
@@ -121,13 +123,15 @@ body{
     text-align: center;
     margin: 20px auto;
 }
-.heading h1{
+
+.heading h1 {
     font-size: 50px;
     color: #000;
-    margin-bottom:25px ;
+    margin-bottom: 25px;
     position: relative;
 }
-.heading h1::after{
+
+.heading h1::after {
     content: "";
     position: absolute;
     width: 100%;
@@ -136,49 +140,57 @@ body{
     margin: 0 auto;
     background-color: #ffaa00;
 }
-.heading p{
+
+.heading p {
     font-size: 18px;
     color: #666;
     margin-bottom: 35px;
 }
-.container{
+
+.container {
     width: 90%;
     margin: 0 auto;
     padding: 10px 20px;
 }
-.about{
+
+.about {
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
 }
-.about-image{
+
+.about-image {
     flex: 1;
     margin-right: 40px;
     margin-left: 40px;
     overflow: hidden;
 }
- img{
+
+.about-image img {
     width: 600px;
     height: 600px;
     display: block;
     transition: 0.5s ease;
     padding: 10%;
 }
- img:hover{
+
+.about-image img:hover {
     transform: scale(1.2);
 }
-.about-content{
+
+.about-content {
     flex: 1;
 }
 
-.about-content p{
+.about-content p {
     font-size: 18px;
     line-height: 1.5;
     color: #000000;
-    
+
 }
-.about-content .read-more{
+
+.about-content .read-more {
     display: inline-block;
     padding: 10px 20px;
     background-color: #ffae00;
@@ -189,8 +201,9 @@ body{
     margin-top: 15px;
     transition: 0.3s ease;
 }
-.about-content .read-more:hover{
-    background-color:rgb(189, 189, 189) ;
+
+.about-content .read-more:hover {
+    background-color: rgb(189, 189, 189);
 }
 
 /* footer  */
@@ -326,36 +339,40 @@ hr {
     left: 0;
 }
 
-
 @media screen and (max-width:768px) {
-    .heading{
+    .heading {
         padding: 0px 20px;
     }
-    .heading h1{
+
+    .heading h1 {
         font-size: 36px;
     }
-    .heading p{
+
+    .heading p {
         font-size: 17px;
         margin-bottom: 0px;
     }
-    .container{
+
+    .container {
         padding: 0px;
     }
-    .about{
+
+    .about {
         padding: 20px;
         flex-direction: column;
     }
-    .about-image{
+
+    .about-image {
         margin-right: 0px;
         margin-bottom: 20px;
     }
-    .about-content p{
+
+    .about-content p {
         padding: 0px;
         font-size: 16px;
     }
-    .about-content .read-more{
+
+    .about-content .read-more {
         font-size: 16px;
     }
 }
-
-
