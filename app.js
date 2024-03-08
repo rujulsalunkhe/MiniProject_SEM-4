@@ -100,6 +100,20 @@ app.get("/home", async (req,res) => {
 
 app.use("/Img_files", express.static('Img_files'));
 
+//////////////// Login & Signup Page //////////////////
+
+app.get("/login", async (req, res) => {
+    const allListings = await Listing.find({});
+    res.render("login/login", { allListings });
+
+});
+
+app.get("/signup", async (req, res) => {
+    const allListings = await Listing.find({});
+    res.render("login/signup", { allListings });
+
+});
+
 
 app.listen(3000, () =>{
     console.log("Server is listening to port 3000");

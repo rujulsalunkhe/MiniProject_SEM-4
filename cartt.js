@@ -1,4 +1,4 @@
-const product=[
+const product = [
     {
         id: 0,
         image: 'image1',
@@ -17,23 +17,22 @@ const product=[
         title: 'laptop tstand',
         price: 999,
     },
-   
+
 ];
-const categories =[...new Set(product.map((item)=>{return item}))]
-let i=0;
-document.getElementById('root').innerHTML = categories.map((item)=>
-{
-    var{image, title,price}=item;
-    return(
+const categories = [...new Set(product.map((item) => { return item }))]
+let i = 0;
+document.getElementById('root').innerHTML = categories.map((item) => {
+    var { image, title, price } = item;
+    return (
         <div class='box'>
             <div class='img-box'>
-            <img class='images' src = $ {Image}></img>
+                <img class='images' src= $ {Image}></img>
             </div>
-        <div class='bottom'>
-            <p>${title}</p>
-            <h2>$ ${price}.00</h2>+
-            "<button onclick='addtocart("+(i++)+")'>Add to cart</button>"+
+            <div class='bottom'>
+                <p>${title}</p>
+                <h2>$ ${price}.00</h2>+
+                "<button onclick='addtocart("+(i++)+")'>Add to cart</button>"+
             </div>
-</div>            
+        </div>
     )
 }).join('')
