@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
 
 * {
@@ -22,13 +21,8 @@ html {
 }
 
 body {
-<<<<<<< HEAD
     background-color: rgb(243, 243, 243);
     font-family: 'poppins', sans-serif;
-=======
-    background-color: rgb(250, 248, 245);
-    font-family: 'Poppins', sans-serif;
->>>>>>> 7a144a9172418405e21cad71f39513750cbc5346
 }
 
 /* CSS Variables */
