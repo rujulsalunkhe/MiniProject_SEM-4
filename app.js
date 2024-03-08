@@ -5,6 +5,8 @@ const Listing = require("./models/listing.js");
 const path = require("path");
 const methodOverride = require("method-override");
 const ejsMate = require("ejs-mate");
+const multer = require('multer');
+
 
 const MONGO_URL="mongodb+srv://atharva:home@cluster0.uddossk.mongodb.net/";
 main().then( () => {
@@ -39,6 +41,22 @@ app.get("/listings/new", (req, res) => {
     res.render("listings/new.ejs");
 });
 
+
+////////////// Upload Image (Multer) ///////////////////
+
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+      cb(null, 'public/images/') // specify the destination directory for uploads
+    },
+    filename: function (req, file, cb) {
+      // specify the filename for uploaded files
+      cb(null, Date.now() + '-' + file.originalname)
+    }
+  });
+  
+  const upload = multer({ storage: storage });
+
+
 //Show Route
 app.get("/listings/:id", async (req, res) => {
     let {id} = req.params;
@@ -47,7 +65,7 @@ app.get("/listings/:id", async (req, res) => {
 })
 
 //Create Route
-app.post("/listings", async (req, res) => {
+app.post("/listings",upload.single('listing[image]'), async (req, res) => {
 const newListing = new Listing(req.body.listing);
 await newListing.save();
 res.redirect("/listings");
@@ -72,7 +90,7 @@ app.delete("/listings/:id", async (req, res) =>{
     let {id} = req.params;
    let deletedListing = await Listing.findByIdAndDelete(id)
    console.log(deletedListing);
-   res.redirect("/listings");
+   res.redirect("/listings/");
 });
 // app.get("/testListing", async (req,res) => {
 //  let sampleListing = new Listing({
@@ -113,6 +131,10 @@ app.get("/signup", async (req, res) => {
     res.render("login/signup", { allListings });
 
 });
+
+
+
+  
 
 
 app.listen(3000, () =>{

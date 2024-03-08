@@ -7,10 +7,7 @@ const listingSchema = new Schema({
         require: true,
     },
     description: String,
-    image: {
-        type:String,
-        set: (v) => v == "" ? "default link" : v,
-    },
+    image: String,
     price: Number,
     location: String,
 });
