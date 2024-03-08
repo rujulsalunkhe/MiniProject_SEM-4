@@ -21,7 +21,7 @@ html {
 }
 
 body {
-    background-color: rgb(243, 243, 243);
+    background-color: rgb(250, 248, 245);
     font-family: 'Poppins', sans-serif;
 }
 
@@ -39,7 +39,7 @@ body {
     justify-content: space-around;
     flex-wrap: wrap;
     z-index: 10;
-    background-color: var(--bg-color);
+    background-color: rgb(250, 248, 245);
 }
 
 #navbar::before {
