@@ -6,7 +6,7 @@ const path = require("path");
 const methodOverride = require("method-override");
 const ejsMate = require("ejs-mate");
 
-const MONGO_URL="mongodb://127.0.0.1:27017/homebeing";
+const MONGO_URL="mongodb+srv://atharva:home@cluster0.uddossk.mongodb.net/";
 main().then( () => {
     console.log("Connected to DB");
 })
