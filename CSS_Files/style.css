@@ -70,7 +70,7 @@ body {
 
 #navbar ul {
     display: flex;
-    font-family: 'Baloo Bhai 2', sans-serif;
+    font-family: 'poppins', sans-serif;
     flex-wrap: wrap;
     color: var(--text-color);
 }
@@ -242,13 +242,13 @@ body {
 }
 
 #services .box p {
-    font-family: 'jakarta', serif;
+    font-family: 'poppins', sans-serif;
 }
 
 .h-primary {
     font-size: 2.5rem;
     /* padding: 12px; */
-    font-family: 'Bree Serif', serif;
+    font-family: 'poppins', sans-serif;
     display: flex;
     position: relative;
     border: 2px solid var(--element-color);
@@ -272,7 +272,7 @@ body {
 .h-secondary {
     font-size: 2.1rem;
     padding: 12px;
-    font-family: 'Bree Serif', serif;
+    font-family: 'poppins', sans-serif;
 }
 
 .center {
@@ -281,8 +281,23 @@ body {
 }
 
 /* why choose us  */
+
+/* .why-choose-us {
+    background-color: rgba(0, 0, 0, 0.525);
+} */
+
 .why-choose-us {
-    background-color: #7f7b7b;
+    content: "";
+    background: url('../Img_files/index imgs/kitchen.jpg') no-repeat center center/cover;
+    position: relative;
+    width: 100%;
+    z-index: -1;
+    opacity: 0.8;
+}
+
+.why-choose-us .box {
+    background-color: rgba(0, 0, 0, 0.71);
+    /* z-index: -5; */
 }
 
 .first {
@@ -299,6 +314,7 @@ body {
     background-color: var(--element-color);
     position: relative;
     z-index: 7;
+
 }
 
 .secImg {
@@ -330,9 +346,9 @@ section.first>div :nth-child(2) {
 }
 
 /*about us*/
-.about-us {
+/* .about-us {
     background-color: var(--element-color);
-}
+} */
 
 .h-primary center sec-head {
     color: #ffffff;
@@ -342,11 +358,14 @@ section.first>div :nth-child(2) {
 
     height: 40vw;
     width: 40vw;
-    padding: 30px;
+    padding: 0px 30px;
+    padding-bottom: 60px;
 }
 
 .about-txt {
     font-size: 20px;
+    color: var(--element-color);
+
 }
 
 /* footer  */
