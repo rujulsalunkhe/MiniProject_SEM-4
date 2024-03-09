@@ -1,19 +1,23 @@
 <% layout("/layouts/boilerplate") %>
     <h3>Create a new listing</h3>
-    <form method="POST" action="/listings">
-        <div>
+    <form method="POST" action="/listings" novalidate class="needs-validation">
+        <div class="mb-3">
           <label for="title" class="form-label">Title</label>
           <input name="listing[title]"
            placeholder="enter title" 
            type="text" 
-           class="form-control"/> 
+           class="form-control"
+           required
+           />
+           <div class="valid-feedback">Title looks good</div> 
         </div>
       <div>
         <label for="description" class="form-label">Description</label>
         <textarea
          name="listing[description]"
-         class="form-control"
+         class="form-control" required
          ></textarea>
+         <div class="invalid-feedback">Please enter a short description</div> 
       </div> 
 <div>
   <label for="image" class="form-label" class="form-label">Image URL</label>
@@ -21,12 +25,14 @@
 </div>
 <div>
   <label for="price" class="form-label" class="form-label">price</label>
-  <input name="listing[price]" placeholder="enter price" type="number" class="form-control"/>
+  <input name="listing[price]" placeholder="enter price"  class="form-control" required/>
+  <div class="invalid-feedback">Price should be valid</div> 
 </div>
 
 <div>
   <label for="Location" class="form-label" class="form-label">Location</label>
-  <input name="listing[location]" placeholder="enter location" type="text" />
+  <input name="listing[location]" placeholder="enter location" type="text" required />
+  <div class="invalid-feedback">Location should be valid</div> 
 </div>
 <button class="btn btn-dark">Add</button>
     </form>
