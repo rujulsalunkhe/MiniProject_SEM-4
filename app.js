@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 const Listing = require("./models/listing.js");
+const Blog = require("./models/blogs.js");
 const path = require("path");
 const methodOverride = require("method-override");
 const ejsMate = require("ejs-mate");
@@ -30,6 +31,81 @@ app.get("/", (req, res) => {
     res.send("hi, I am root");
 });
 
+/////////////////          BLOGS         ///////////////////////////////////////////
+
+//Index Route
+app.get("/blogs", async (req,res) => {
+    const allBlogs = await Blog.find({});
+    res.render("blogs/blogs.ejs",{allBlogs});
+});
+
+
+    //new route
+app.get("/blogs/new", (req, res) => {
+    res.render("blogs/new.ejs");
+});
+
+//Show Route
+app.get("/blogs/:id", async (req, res) => {
+    try {
+        const { id } = req.params;
+        console.log("Fetching blog with id:", id);
+        const blog = await Blog.findById(id);
+        if (!blog) {
+            return res.status(404).send("Blog not found");
+        }
+        console.log("Found blog:", blog);
+        res.render("blogs/show.ejs", { blog });
+    } catch (err) {
+        console.error("Error fetching blog:", err);
+        res.status(500).send("Error fetching blog");
+    }
+});
+
+
+
+
+
+
+//Create Route
+app.post("/blogs", async (req, res, next) => {
+try{
+    const newBlog = new Blog(req.body.blogs);
+    await newBlog.save();
+    res.redirect("/blogs");
+} catch(err) {
+    next(err);
+}
+});
+
+//Edit route
+app.get("/blogs/:id/edit", async(req,res) => {
+    let {id} = req.params;
+    const Blog = await Blog.findById(id); // Use Blogs model here
+    res.render("blogs/edit.ejs", {Blog}); // Pass 'blog' instead of 'blogs'
+});
+
+
+//Update route
+app.put("/blogs/:id", async (req, res) => {
+    let {id} = req.params;
+    await Blogs.findByIdAndUpdate(id, {...req.body.listing});
+    res.redirect("/blogs");
+});
+
+//Delete route
+app.delete("/blogs/:id", async (req, res) =>{
+    let {id} = req.params;
+   let deletedBlog = await Blogs.findByIdAndDelete(id); // Use Blogs model here
+   console.log(deletedBlog);
+   res.redirect("/blogs/");
+});
+
+
+
+
+
+////////////////////////////////////////////////////////////
 //Index Route
 app.get("/listings", async (req,res) => {
     const allListings = await Listing.find({});
@@ -140,6 +216,10 @@ app.get("/signup", async (req, res) => {
 
 });
 
+app.get("/blogs", async (req,res) => {
+    const allListings = await Listing.find({});
+    res.render("blogs/blogs.ejs",{allListings});
+    });
 
 
   

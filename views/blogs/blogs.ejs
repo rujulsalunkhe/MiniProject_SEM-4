@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale-1.0,user-scalable=no">
+    <title>Blogs</title>
+    <link rel="stylesheet" href="/css/blog.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <link rel="shortcut icon" href="./favicon_io/favicon.ico">
+</head>
+
+<body>
+    <%- include("../includes/navbar.ejs") %>
+    <h3>All Blogs</h3>
+     <form method="GET" action="/blogs/new">
+        <button>create New Blog</button>
+    </form> 
+
+
+
+<section id="blog">
+    <!--heading-->
+    <div class="blog-heading">
+        <span>Our Recent Posts</span>
+        <h3>Our Blogs</h3>
+    </div>
+
+    <div class="blog-container">
+
+
+        <!--box1-->
+        <div class="blog-box">
+            <% for(let blogs of allBlogs) { %>
+            <!--img-->
+            <a href="/blogs/<%= blogs._id %>" class="blogs-link"></a>
+            <div class="blog-img">
+
+                <img src="/images/<%= blogs.image %>" class="card-img-top" alt="blogs_image" style="height: 20rem">
+            </div>
+
+            <!--text-->
+            <!--text-->
+            <div class="blog-text">
+                <span><%= blogs.date %></span>
+                <a href="#" class="blog-title"><b><%= blogs.title %></b></a><br>
+                <p><%= blogs.description %> </p>
+                <a href="/blogs/<%= blogs._id %>">Read More</a> <!-- Updated link -->
+            </div>
+            <% } %>
+        </div>
+
+        <%- include("../includes/footer.ejs") %>
+    </div>
+    </body>
