@@ -27,11 +27,11 @@
         <h3>Our Blogs</h3>
     </div>
 
-    <div class="blog-container">
+    
 
 
         <!--box1-->
-        <div class="blog-box">
+        
             <% for(let blogs of allBlogs) { %>
             <!--img-->
             <a href="/blogs/<%= blogs._id %>" class="blogs-link"></a>
@@ -49,8 +49,8 @@
                 <a href="/blogs/<%= blogs._id %>">Read More</a> <!-- Updated link -->
             </div>
             <% } %>
-        </div>
+        
 
         <%- include("../includes/footer.ejs") %>
-    </div>
+  
     </body>
