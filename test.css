@@ -1,114 +1,78 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
-
-* {
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
-    font-family: poppins;
-}
-
-:root {
-    --bg-color: #D7D7D7;
-    --second-bg-color: #bcbcbc;
-    --block-color: #484848;
-    --element-color: #FF9341;
-    --text-color: #7F7B7B;
-    --white: #ffffff;
-}
-
-html {
-    scroll-behavior: smooth;
-}
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@1,300&display=swap');
 
 body {
-    background-color: #e4e4e4;
+    margin: 0;
+    padding: 0;
 }
 
-/* CSS Variables */
-:root {
-    --navbar-height: 59px;
-}
-
-/* Navigation Bar */
-#navbar {
-    display: flex;
-    align-items: center;
+header {
+    width: (100%);
+    height: 30px;
+    box-shadow: 0px 0px 10px black;
+    background-color: whitesmoke;
+    padding: 10px 0 15px 0;
     position: sticky;
-    top: 0px;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    z-index: 10;
-    background-color: var(--bg-color);
+    top: 0;
 }
 
-#navbar::before {
-    content: "";
-
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    height: 100%;
-    width: 100%;
-    z-index: -1;
-    opacity: 0.3;
+h1 {
+    margin: 0;
+    font-size: 2rem;
 }
 
-/* Navigation Bar: logo and image */
-
-#logo {
-    margin: 10px 20px;
-}
-
-#logo img {
-    height: 59px;
-    margin: 3px 6px;
-}
-
-/* Navigation Bar: List Styling */
-#navbar ul {
-    display: flex;
-    font-family: 'Baloo Bhai 2', sans-serif;
-    flex-wrap: wrap;
-}
-
-#navbar ul li {
-    list-style: none;
-    font-size: 1.3rem;
-
-}
-
-#navbar ul li a {
-    display: block;
-    color: var(--text-color);
-    padding: 3px 22px;
-    border-radius: 20px;
-    text-decoration: none;
-
-}
-
-#navbar ul li a:hover {
-    /* background-color: white; */
-    color: var(--main-color);
-}
-
-#navbar ul li a: {
+hr {
+    margin-top: 15px;
+    height: 15px;
+    width: min(90%);
     color: aqua;
+    background-color: black;
 }
 
-#getq {
+h2 {
+    font-size: 2rem;
+    font-family: serif;
+    width: min(90%);
+    text-align: center;
+    margin: 5px auto 5px auto;
+}
+
+img {
+
+    width: 90%;
+    height: 50%;
     display: flex;
-    text-decoration: none;
-    padding: 3px 22px;
-    border-radius: 20px;
-    color: white;
-    background-color: var(--element-color);
-    align-items: center;
-    justify-content: center;
-
+    margin: 20px auto 10px auto;
 }
 
-#arrow {
-    padding-left: 7px;
-    width: 25px;
-    height: 25px;
+.content {
+    margin: 30px auto;
+    width: min(90%);
+}
+
+p {
+    font-family: 'Merriweather', serif;
+    font-size: 1.2rem;
+}
+
+.quote {
+    color: gray;
+    font-style: italic;
+    font-size: 1.1rem;
+}
+
+@media only screen and (min-width:1000px) {
+    .body {
+        width: min(60%);
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    img {
+        width: min(80%);
+        margin-top: 5%;
+    }
+
+    h2 {
+        margin: 20px auto 20px auto;
+    }
 }
