@@ -13,31 +13,107 @@
 
 <body>
 
+  <!--navbar-->
+  <nav id="navbar">
+    <div id="logo">
+      <img src="./logo w name.png" alt="logo">
+    </div>
+    <div class="right">
 
-  <div class="wrapper">
-    <form action="#">
-      <h2>Login</h2>
-      <div class="input-field">
-        <input type="text" id="email" required>
-        <label>Enter your email</label>
+      <ul>
+        <li><a class="item" href="#home"><span id="item-inuse">Home </span></a></li>
+        <li><a class="item " href="./store.html">Store</a></li>
+        <li><a class="item" href="./blogs.html">Blogs</a></li>
+        <li><a class="item" href="./cartt.html">Cart</a></li>
+        <li><a class="item" href="./contactform.html">Contact Us</a></li>
+
+        <a href="./log.html" id="getq">Login <img id="arrow" src="./Img_files/maki_arrow.svg" alt="">
+        </a>
+      </ul>
+    </div>
+  </nav>
+  <!--navbar ends-->
+
+  <section>
+    <div class="wrapper">
+      <form action="#">
+        <h2>Login</h2>
+        <div class="input-field">
+          <input type="text" id="email" required>
+          <label>Enter your email</label>
+        </div>
+        <div class="input-field">
+          <input type="password" id="password" required>
+          <label>Enter your password</label>
+        </div>
+        <div class="forget">
+          <label for="remember">
+            <input type="checkbox" id="remember">
+            <p>Remember me</p>
+          </label>
+          <a href="#">Forgot password?</a>
+        </div>
+        <button type="submit" class="submit-btn" onclick="auth()">Log In</button>
+        <div class="register">
+          <p>Don't have an account? <a href="sign.html">Register</a></p>
+        </div>
+      </form>
+    </div>
+
+  </section>
+
+  <!-- footer starts here -->
+  <footer>
+    <div class="row">
+      <div class="col">
+        <img src="./logo.jpg" alt="logo"><br>
+        <p>
+          "Transform your space with our curated
+          collection of stylish and functional furniture.
+          From cozy seating to elegant accents, discover
+          the perfect pieces to elevate your home. Shop
+          now for quality craftsmanship and timeless designs."
+        </p>
       </div>
-      <div class="input-field">
-        <input type="password" id="password" required>
-        <label>Enter your password</label>
+      <div class="col">
+        <h3>Office <div class="underline"></div>
+        </h3>
+        <p>Yet to be filled</p>
+        <p class="email-id">homebeing@outlook.com</p>
+        <h4>+91 - xxxxx xxxxx</h4>
       </div>
-      <div class="forget">
-        <label for="remember">
-          <input type="checkbox" id="remember">
-          <p>Remember me</p>
-        </label>
-        <a href="#">Forgot password?</a>
+      <div class="col">
+        <h3>Links <div class="underline"></div>
+        </h3>
+        <ul>
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./store.html">Store</a></li>
+          <li><a href="./blogs.html">Blogs</a></li>
+          <li><a href="./cartt.html">Cart</a></li>
+          <li><a href="./contactform.html">Contacts Us</a></li>
+        </ul>
       </div>
-      <button type="submit" class="submit-btn" onclick="auth()">Log In</button>
-      <div class="register">
-        <p>Don't have an account? <a href="sign.html">Register</a></p>
+      <div class="col">
+        <h3>Newsletter <div class="underline"></div>
+        </h3>
+        <form>
+          <i class='bx bx-envelope'></i>
+          <input type="email" placeholder="enter your email id" required>
+          <button type="submit"><i class='bx bxs-right-arrow-alt'></i></button>
+        </form>
+        <div class="social-icons">
+          <i class='bx bxl-facebook-square'></i>
+          <i class='bx bxl-whatsapp'></i>
+          <i class='bx bxl-twitter'></i>
+          <i class='bx bxl-instagram'></i>
+        </div>
       </div>
-    </form>
-  </div>
+    </div>
+    <hr>
+    <p class="copyright"> Home Being 2024 - All Rights Reserved</p>
+  </footer>
+
+
   <script>
     function auth() {
       var email = document.getElementById("email").value;

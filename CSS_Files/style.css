@@ -115,6 +115,10 @@ body {
 
 }
 
+#getq:hover {
+    background-color: #f47717;
+}
+
 #arrow {
     padding-left: 7px;
     width: 25px;
@@ -193,6 +197,10 @@ body {
     font-size: 1.7vw;
 }
 
+#knowmore:hover {
+    background-color: #f47717;
+}
+
 .km-margin {
     margin: 30px 0px;
 }
@@ -232,6 +240,11 @@ body {
     border-radius: 20px;
     background-color: #f2f2f2;
     margin-bottom: 20px;
+}
+
+#services .box:hover {
+    background-color: #dbdbdb;
+    cursor: pointer;
 }
 
 #services .box img {
@@ -296,7 +309,7 @@ body {
 }
 
 .why-choose-us .box {
-    background-color: rgba(0, 0, 0, 0.71);
+    background-color: rgba(0, 0, 0, 0.69);
     /* z-index: -5; */
 }
 
