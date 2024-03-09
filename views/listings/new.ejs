@@ -1,72 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homebeing</title>
-    <link rel="stylesheet" href="/css/newlistings.css" />
-</head>
-<body>
-<<<<<<< HEAD
+<% layout("/layouts/boilerplate") %>
     <h3>Create a new listing</h3>
     <form method="POST" action="/listings">
         <div>
-            
+          <label for="title" class="form-label">Title</label>
+          <input name="listing[title]"
+           placeholder="enter title" 
+           type="text" 
+           class="form-control"/> 
         </div>
-        <label for="title" class="form-label">Title</label>
-<input name="listing[title]" placeholder="enter title" type="text" class="form-control"/>
-<br /><br />
-<textarea name="listing[description]" placeholder="enter Description"></textarea>
-<br /><br />
-<input name="listing[image]" placeholder="enter image URL/Link" type="text" />
-<br /><br />
-<input name="listing[price]" placeholder="enter price" type="number" />
-<br /><br />
-<input name="listing[location]" placeholder="enter location" type="text" />
-<br /><br />
-<button>Add</button>
-    </form>
-=======
-          </div>
-          <div class="box-root padding-top--24 flex-flex flex-direction--column" style="flex-grow: 1; z-index: 9;">
-            <div class="formbg-outer">
-              <div class="formbg">
-                <div class="formbg-inner padding-horizontal--48">
-                  <span class="padding-bottom--15">Add Product</span>
-                  <form method="POST" id="stripe-login" action="/listings" enctype="multipart/form-data">
-                    <div class="field padding-bottom--24">
-                      <label for="">Title</label>
-                      <input name="listing[title]" placeholder="enter title" />
-                    </div>
-                    <div class="field padding-bottom--24">
-                      <div class="grid--50-50">
-                        <label for="Image">Image</label>
-                      </div>
-                      <input name="listing[image]" placeholder="enter image URL/Link" type="file" />
-                    </div>
-                      <div class="field padding-bottom--24">
-                        <label for="">Price</label>
-                        <input name="listing[price]" placeholder="enter price" type="number" />
-                      </div>
-                      <div class="field padding-bottom--24">
-                        <label for="">Location</label>
-                        <input name="listing[location]" placeholder="enter location" type="text" />
-                      </div>
-                    
-                    <div class="field padding-bottom--24">
-                      <input type="submit" name="submit" value="Continue">
-                    </div>
-                    
-                  </form>
-                </div>
-              </div>
-             
-            </div>
-          </div>
-        </div>
-      </div>
-    </body>
+      <div>
+        <label for="description" class="form-label">Description</label>
+        <textarea
+         name="listing[description]"
+         class="form-control"
+         ></textarea>
+      </div> 
+<div>
+  <label for="image" class="form-label" class="form-label">Image URL</label>
+  <input name="listing[image]" placeholder="enter image URL/Link" type="text" class="form-control" />
+</div>
+<div>
+  <label for="price" class="form-label" class="form-label">price</label>
+  <input name="listing[price]" placeholder="enter price" type="number" class="form-control"/>
+</div>
 
->>>>>>> bf7c328e6ec37af26eb9bb2a92db8c9c8de51f28
-</body>
-</html>
+<div>
+  <label for="Location" class="form-label" class="form-label">Location</label>
+  <input name="listing[location]" placeholder="enter location" type="text" />
+</div>
+<button class="btn btn-dark">Add</button>
+    </form>
+
