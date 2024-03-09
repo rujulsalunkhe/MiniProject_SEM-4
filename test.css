@@ -1,78 +1,171 @@
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@1,300&display=swap');
-
-body {
-    margin: 0;
-    padding: 0;
-}
-
-header {
-    width: (100%);
-    height: 30px;
-    box-shadow: 0px 0px 10px black;
-    background-color: whitesmoke;
-    padding: 10px 0 15px 0;
-    position: sticky;
-    top: 0;
-}
-
-h1 {
-    margin: 0;
-    font-size: 2rem;
-}
-
-hr {
-    margin-top: 15px;
-    height: 15px;
-    width: min(90%);
-    color: aqua;
-    background-color: black;
-}
-
-h2 {
-    font-size: 2rem;
-    font-family: serif;
-    width: min(90%);
-    text-align: center;
-    margin: 5px auto 5px auto;
-}
-
-img {
-
-    width: 90%;
-    height: 50%;
+.navigation {
+    margin-top: 25px;
+    font-family: var(--font1);
+    /* height: 74px;  */
     display: flex;
-    margin: 20px auto 10px auto;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-left {
+    display: flex;
+}
+
+.nav-left span {
+    font-size: 35px;
+    padding-top: 10px;
+}
+
+.nav-left ul {
+    display: flex;
+    align-items: center;
+    margin: 0 77px;
+    font-size: 22px;
+    padding-bottom: 23px;
+}
+
+.nav-left ul li {
+    list-style: none;
+    margin: 0 14px;
+    font-family: var(--font2);
+    transition: all 0.3s ease-in-out;
+}
+
+.nav-left ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+.nav-left ul li a:hover {
+    color: var(--main-bg-color);
+    font-weight: bolder;
 }
 
 .content {
-    margin: 30px auto;
-    width: min(90%);
+    height: 100%;
+    display: flex;
+    margin-top: 32px;
+    padding: 9px;
+    position: relative;
 }
 
-p {
-    font-family: 'Merriweather', serif;
-    font-size: 1.2rem;
+.content::after {
+    content: "";
+    background-image: url("../img/11.svg");
+    position: absolute;
+    width: 100%;
+    height: inherit;
+    opacity: 0.15;
+    border-radius: 12px;
 }
 
-.quote {
-    color: gray;
-    font-style: italic;
-    font-size: 1.1rem;
+.content-left {
+    font-family: var(--font1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 49px;
+    z-index: 1;
 }
 
-@media only screen and (min-width:1000px) {
-    .body {
-        width: min(60%);
-        margin-left: auto;
-        margin-right: auto;
-    }
+.content-right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
-    img {
-        width: min(80%);
-        margin-top: 5%;
-    }
+.content-right img {
+    height: 355px;
+    border: 2px solid black;
+    border-radius: 200px;
+}
 
-    h2 {
-        margin: 20px auto 20px auto;
-    }
+.home-articles {
+    padding: 18px;
+    background-color: rgb(248, 239, 239, 0.5);
+    margin-top: 23px;
+    position: relative;
+}
+
+.year-box {
+    position: absolute;
+    right: 0px;
+    top: 100px;
+    width: 234px;
+    height: 255px;
+    font-size: 18px;
+}
+
+.year-box div {
+    margin: 12px 0px;
+}
+
+.home-article {
+    display: flex;
+    margin: 25px;
+}
+
+.home-article img {
+    width: 300px;
+}
+
+.home-article-content {
+    align-self: center;
+    padding: 25px;
+}
+
+.home-article-content a {
+    text-decoration: none;
+    color: black;
+}
+
+
+.post-img {
+    height: 404px;
+    overflow: hidden;
+}
+
+.post-img img {
+    width: 100%;
+}
+
+.blog-post-content {
+    /* background-color: rebeccapurple; */
+}
+
+.blog-post-content h1 {
+    text-align: center;
+}
+
+.blog-post-content p {
+    font-size: 18px;
+}
+
+.row {
+    display: flex;
+}
+
+.more-post {
+    flex-direction: column;
+    align-items: center;
+}
+
+.blogpost-meta {
+    display: flex;
+    justify-content: space-between;
+}
+
+.author-info {
+    margin: 12px 0;
+}
+
+.author-info div {
+    padding: 4px 0px;
+    font-family: var(--font2);
+}
+
+.social {
+    padding-right: 53px;
+    align-self: center;
+    cursor: pointer;
 }
