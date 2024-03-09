@@ -185,9 +185,10 @@ body {
 }
 
 .blog-box:hover {
-
-    background-color: #b3b3b3;
+    background-color: #dbdbdb;
+    cursor: pointer;
 }
+
 
 .blog-img {
     width: 100%;
