@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Homebeing</title>
+    <link rel="stylesheet" href="/css/newlistings.css" />
 </head>
 <body>
+<<<<<<< HEAD
     <h3>Create a new listing</h3>
     <form method="POST" action="/listings">
         <div>
@@ -24,5 +26,47 @@
 <br /><br />
 <button>Add</button>
     </form>
+=======
+          </div>
+          <div class="box-root padding-top--24 flex-flex flex-direction--column" style="flex-grow: 1; z-index: 9;">
+            <div class="formbg-outer">
+              <div class="formbg">
+                <div class="formbg-inner padding-horizontal--48">
+                  <span class="padding-bottom--15">Add Product</span>
+                  <form method="POST" id="stripe-login" action="/listings" enctype="multipart/form-data">
+                    <div class="field padding-bottom--24">
+                      <label for="">Title</label>
+                      <input name="listing[title]" placeholder="enter title" />
+                    </div>
+                    <div class="field padding-bottom--24">
+                      <div class="grid--50-50">
+                        <label for="Image">Image</label>
+                      </div>
+                      <input name="listing[image]" placeholder="enter image URL/Link" type="file" />
+                    </div>
+                      <div class="field padding-bottom--24">
+                        <label for="">Price</label>
+                        <input name="listing[price]" placeholder="enter price" type="number" />
+                      </div>
+                      <div class="field padding-bottom--24">
+                        <label for="">Location</label>
+                        <input name="listing[location]" placeholder="enter location" type="text" />
+                      </div>
+                    
+                    <div class="field padding-bottom--24">
+                      <input type="submit" name="submit" value="Continue">
+                    </div>
+                    
+                  </form>
+                </div>
+              </div>
+             
+            </div>
+          </div>
+        </div>
+      </div>
+    </body>
+
+>>>>>>> bf7c328e6ec37af26eb9bb2a92db8c9c8de51f28
 </body>
 </html>

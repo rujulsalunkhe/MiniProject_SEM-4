@@ -4,6 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    outline: none;
     font-family: 'poppins', sans-serif;
 }
 
@@ -16,18 +17,11 @@
     --white: #ffffff;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
 body {
-    background-color: rgb(243, 243, 243);
-    font-family: 'Poppins', sans-serif;
-}
-
-/* CSS Variables */
-:root {
-    --navbar-height: 59px;
+    background: url('https://s3-alpha-sig.figma.com/img/f36d/326a/6adf2ff3ce1f677a2ec4f8f48905f68b?Expires=1710720000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=JDQouPF7QGyhYqPRPPup7-7RyXYc6nORZX~gO2N6lz~-OSUjushQQenWYvodkKpUxIQyrHz~M9-HKlnYW-e94L2HyjVtpSNSW9XgS-sbpcQoAG0YKJ1DHnumUnjnq9ZXQhG~oKtuHrLVFWCLxKYZLcbzLG1wUQSDkWfcAAxoZZETqHTeeFem1DeJwrqTd6ff7T3eyV0IwN2HgitfJ0ZDgRrgV1sP5-Vu1eh1orXWz5OK-eqZb1t4XAfC5ikt5LUzk0HLd5ggUt1uWzg6RvzJRtR4wSFuBaqRQsohx6Ci-Xesdi4M-IHonMH-xVuEF1mM~pDfjcZCXe56idYxzzrPrQ__') no-repeat top center;
+    background-size: cover;
+    height: 100vh;
+    background-color: rgb(250, 248, 245);
 }
 
 /* Navigation Bar */
@@ -39,7 +33,7 @@ body {
     justify-content: space-around;
     flex-wrap: wrap;
     z-index: 10;
-    background-color: var(--bg-color);
+    background-color: rgb(250, 248, 245);
 }
 
 #navbar::before {
@@ -129,6 +123,84 @@ body {
 
 /* nanvbar ends  */
 
+
+.form .wrapper {
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    width: 100%;
+    max-width: 550px;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    margin: 40px;
+}
+
+.form .wrapper .title h1 {
+    color: #ffaa00;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.form .contact-form {
+    display: flex;
+}
+
+.form .input-fields {
+    display: flex;
+    flex-direction: column;
+    margin-right: 4%;
+}
+
+.form .input-fields,
+.form .msg {
+    width: 48%;
+}
+
+.form .input-fields .input,
+.form .msg textarea {
+    margin: 10px 0;
+    background: transparent;
+    border: 0px;
+    border-bottom: 2px solid #ffaa00;
+    padding: 10px;
+    color: #ffaa00;
+    width: 100%;
+}
+
+.copyright .msg textarea {
+    height: 212px;
+}
+
+.form ::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    color: #ffaa00;
+}
+
+.form ::-moz-placeholder {
+    /* Firefox 19+ */
+    color: #ffaa00;
+}
+
+.form :-ms-input-placeholder {
+    /* IE 10+ */
+    color: #ffaa00;
+}
+
+.form .btn {
+    background: #FF9341;
+    text-align: center;
+    padding: 15px;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.form .btn:hover {
+    background: #c85a00;
+}
 
 /* footer  */
 

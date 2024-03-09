@@ -17,6 +17,7 @@
 
 body {
     font-family: 'Poppins', sans-serif;
+    background-color:  rgb(250, 248, 245);;
 }
 
 /* Navigation Bar */
@@ -28,7 +29,7 @@ body {
     justify-content: space-around;
     flex-wrap: wrap;
     z-index: 10;
-    background-color: var(--bg-color);
+    background-color: rgb(250, 248, 245);
 }
 
 #navbar::before {
@@ -59,7 +60,7 @@ body {
 
 #navbar ul {
     display: flex;
-    font-family: 'Baloo Bhai 2', sans-serif;
+    font-family: 'poppins', sans-serif;
     flex-wrap: wrap;
     color: var(--text-color);
 }
@@ -194,7 +195,7 @@ body {
     padding-left: 10px;
     font-size: 20px;
     margin-right: 10px;
-    border: 1px solid #ff7c02;
+    border: 1px solid #ffaa00;
 }
 
 .input:focus {
@@ -217,12 +218,12 @@ p {
 
 .btn {
     display: inline-block;
-    background: #ff5e00;
+    background: #ffaa00;
     color: #fff;
     padding: 8px 30px;
     margin: 30px 0;
     border-radius: 30px;
-    transition: background 0.5s;
+    transition:0.5s;
 }
 
 .btn:hover {
