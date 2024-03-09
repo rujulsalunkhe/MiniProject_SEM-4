@@ -1,36 +1,33 @@
 <% layout("/layouts/boilerplate") %>
-    <h3>Create a new blog</h3>
-    <form method="POST" action="/blogs" novalidate class="needs-validation">
-        <div class="mb-3">
-          <label for="title" class="form-label">Title</label>
-          <input name="blogs[title]"
-           placeholder="enter title" 
-           type="text" 
-           class="form-control"
-           required
-           />
-           <div class="valid-feedback">Title looks good</div> 
-        </div>
-      <div>
+<h3>Create a new blog</h3>
+<form method="POST" action="/blogs" novalidate class="needs-validation" enctype="multipart/form-data">
+    <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+        <input name="blogs[title]"
+               placeholder="enter title"
+               type="text"
+               class="form-control"
+               required
+        />
+        <div class="valid-feedback">Title looks good</div>
+    </div>
+    <div>
         <label for="description" class="form-label">Content</label>
         <textarea
-         name="blogs[description]"
-         class="form-control" required
-         ></textarea>
-         <div class="invalid-feedback">Please enter a short description</div> 
-      </div> 
-<div>
-  <label for="image" class="form-label" class="form-label">Image URL</label>
-  <input name="blogs[image]" placeholder="enter image URL/Link" type="text" class="form-control" />
-</div>
-<div>
-  <label for="date" class="form-label" class="form-label">Date</label>
-  <input name="blogs[date]" placeholder="enter date"  class="form-control" required/>
-  <div class="invalid-feedback">Enter Valid Date</div> 
-</div>
-<button class="btn btn-dark">Add</button>
-    </form>
-
-    
-
-
+            name="blogs[description]"
+            class="form-control" required
+        ></textarea>
+        <div class="invalid-feedback">Please enter a short description</div>
+    </div>
+    <div>
+        <label for="image" class="form-label">Image</label>
+        <input name="blogs[image]" type="file" class="form-control" accept="image/*" required />
+        <div class="invalid-feedback">Please select an image file</div>
+    </div>
+    <div>
+        <label for="date" class="form-label">Date</label>
+        <input name="blogs[date]" type="date" class="form-control" required/>
+        <div class="invalid-feedback">Enter Valid Date</div>
+    </div>
+    <button class="btn btn-dark">Add</button>
+</form>

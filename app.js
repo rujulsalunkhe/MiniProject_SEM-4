@@ -32,6 +32,21 @@ app.get("/", (req, res) => {
     res.send("hi, I am root");
 });
 
+
+////////////// Upload Image (Multer) ///////////////////
+
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+      cb(null, 'public/images/') // specify the destination directory for uploads
+    },
+    filename: function (req, file, cb) {
+      // specify the filename for uploaded files
+      cb(null, Date.now() + '-' + file.originalname)
+    }
+  });
+  
+  const upload = multer({ storage: storage });
+
 /////////////////          BLOGS         ///////////////////////////////////////////
 
 //Index Route
@@ -63,21 +78,34 @@ app.get("/blogs/:id", async (req, res) => {
     }
 });
 
+// Create Route
+app.post("/blogs", upload.single('blogs[image]'), async (req, res, next) => {
+    try {
+        // Log the received file
+        console.log("Received file:", req.file);
 
+        // Check if file exists
+        if (!req.file) {
+            return res.status(400).send("No file uploaded");
+        }
 
-
-
-
-//Create Route
-app.post("/blogs", async (req, res, next) => {
-try{
-    const newBlog = new Blog(req.body.blogs);
-    await newBlog.save();
-    res.redirect("/blogs");
-} catch(err) {
-    next(err);
-}
+        // Continue with saving the blog entry
+        const newBlog = new Blog({
+            // Access other fields using req.body.blogs
+            title: req.body.blogs.title,
+            description: req.body.blogs.description,
+            image: req.file.filename, // Save the filename to the database
+            date: req.body.blogs.date
+        });
+        
+        await newBlog.save();
+        res.redirect("/blogs");
+    } catch(err) {
+        next(err);
+    }
 });
+
+
 
 //Edit route
 app.get("/blogs/:id/edit", async(req,res) => {
@@ -119,19 +147,7 @@ app.get("/listings/new", (req, res) => {
 });
 
 
-////////////// Upload Image (Multer) ///////////////////
 
-const storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-      cb(null, 'public/images/') // specify the destination directory for uploads
-    },
-    filename: function (req, file, cb) {
-      // specify the filename for uploaded files
-      cb(null, Date.now() + '-' + file.originalname)
-    }
-  });
-  
-  const upload = multer({ storage: storage });
 
 
 //Show Route
