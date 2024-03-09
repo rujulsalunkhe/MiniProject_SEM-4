@@ -394,7 +394,7 @@ footer {
     line-height: 20px;
 }
 
-.row {
+footer .row {
     width: 85%;
     margin: auto;
     display: flex;

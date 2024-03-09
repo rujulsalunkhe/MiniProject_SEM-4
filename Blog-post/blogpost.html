@@ -8,38 +8,42 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/blogpost.css">
     <link rel="stylesheet" href="css/mobile.css">
-    <title>iBlog - Heaven for bloggers</title>
+    <title>iBlog-post</title>
+
+    <link rel="shortcut icon" href="../favicon_io/favicon.ico">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
 <body>
-    <nav class="navigation max-width-1 m-auto">
-        <div class="nav-left">
-            <a href="/">
-                <span><img src="img/logo.png" width="94px" alt=""></span>
-            </a>
+    <!--navbar-->
+    <nav id="navbar">
+        <div id="logo">
+            <img src="../logo w name.png" alt="logo">
+        </div>
+        <div class="right">
+
             <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="/contact.html">Contact</a></li>
+                <li><a class="item" href="../index.html">Home</a></li>
+                <li><a class="item " href="../store.html">Store</a></li>
+                <li><a class="item" href="../blogs.html"><span id="item-inuse">Blogs</span></a></li>
+                <li><a class="item" href="../cartt.html">Cart</a></li>
+                <li><a class="item" href="../contactform.html">Contact Us</a></li>
+
+                <a href="../log.html" id="getq">Login <img id="arrow" src="../Img_files/maki_arrow.svg" alt="">
+                </a>
             </ul>
         </div>
-        <div class="nav-right">
-            <form action="/search.html" method="get">
-                <input class="form-input" type="text" name="query" placeholder="Article Search">
-                <button class="btn">Search</button>
-            </form>
-
-        </div>
-
     </nav>
+    <!--navbar ends-->
+
     <div class="max-width-1 m-auto">
         <hr>
     </div>
     <div class="post-img">
-        <img src="img/11.svg" alt="">
+        <img src="../Img_files/blog imgs/blog1.jpg" alt="b1">
     </div>
     <div class="m-auto blog-post-content max-width-2 m-auto my-2">
-        <h1 class="font1">The heaven for bloggers</h1>
+        <h1 class="font1">How can you protect your home from fire accidents?</h1>
         <div class="blogpost-meta">
             <div class="author-info">
                 <div>
@@ -150,11 +154,11 @@
 
             <div class="home-article more-post">
                 <div class="home-article-img">
-                    <img src="img/11.svg" alt="article">
+                    <img src="../Img_files/blog imgs/blog2.jpg" alt="article">
                 </div>
                 <div class="home-article-content font1 center">
                     <a href="/blogpost.html">
-                        <h3>Learn more about Machine Learning techniques in India by joining this channel</h3>
+                        <h3>Creating a Safe Haven: Essential Furniture for Childproofing Your Home</h3>
                     </a>
 
                     <div>Author Name</div>
@@ -163,11 +167,11 @@
             </div>
             <div class="home-article more-post">
                 <div class="home-article-img">
-                    <img src="img/1.png" alt="article">
+                    <img src="../Img_files/blog imgs/blog3.jpg" alt="article">
                 </div>
                 <div class="home-article-content font1 center">
                     <a href="/blogpost.html">
-                        <h3>Learn more about Machine Learning techniques in India by joining this channel</h3>
+                        <h3>Renovate with Peace of Mind: Furniture Selections for Enhanced Home Security</h3>
                     </a>
 
                     <div>Author Name</div>
@@ -176,11 +180,13 @@
             </div>
             <div class="home-article more-post">
                 <div class="home-article-img">
-                    <img src="img/2.png" alt="article">
+                    <img src="../Img_files/blog imgs/blog4.jpg" alt="article">
                 </div>
                 <div class="home-article-content font1 center">
                     <a href="/blogpost.html">
-                        <h3>Learn more about Machine Learning techniques in India by joining this channel</h3>
+                        <h3>18 July 2023/ Home Decor
+                            Maximizing Safety and Style: Ergonomic Furniture Solutions for Seniors
+                        </h3>
                     </a>
 
                     <div>Author Name</div>
@@ -191,10 +197,58 @@
         </div>
     </div>
 
-    <div class="footer">
-        <p>Copyright &copy; iBlog.com </p>
-        <a href="https://www.vecteezy.com/free-vector/typewriter">Vector Credits: Vecteezy</a>
-    </div>
+
+    <!-- footer starts here -->
+    <footer>
+        <div class="row">
+            <div class="col">
+                <img src="../logo.jpg" alt="logo"><br>
+                <p>
+                    "Transform your space with our curated
+                    collection of stylish and functional furniture.
+                    From cozy seating to elegant accents, discover
+                    the perfect pieces to elevate your home. Shop
+                    now for quality craftsmanship and timeless designs."
+                </p>
+            </div>
+            <div class="col">
+                <h3>Office <div class="underline"></div>
+                </h3>
+                <p>Yet to be filled</p>
+                <p class="email-id">homebeing@outlook.com</p>
+                <h4>+91 - xxxxx xxxxx</h4>
+            </div>
+            <div class="col">
+                <h3>Links <div class="underline"></div>
+                </h3>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../store.html">Store</a></li>
+                    <li><a href="../blogs.html">Blogs</a></li>
+                    <li><a href="../cartt.html">Cart</a></li>
+                    <li><a href="../contactform.html">Contacts Us</a></li>
+                </ul>
+            </div>
+            <div class="col">
+                <h3>Newsletter <div class="underline"></div>
+                </h3>
+                <form>
+                    <i class='bx bx-envelope'></i>
+                    <input type="email" placeholder="enter your email id" required>
+                    <button type="submit"><i class='bx bxs-right-arrow-alt'></i></button>
+                </form>
+                <div class="social-icons">
+                    <i class='bx bxl-facebook-square'></i>
+                    <i class='bx bxl-whatsapp'></i>
+                    <i class='bx bxl-twitter'></i>
+                    <i class='bx bxl-instagram'></i>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <p class="copyright"> Home Being 2024 - All Rights Reserved</p>
+    </footer>
+
 </body>
 
 </html>
