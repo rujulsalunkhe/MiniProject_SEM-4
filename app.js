@@ -363,8 +363,7 @@ app.post(
         failureRedirect: "/login",
     }),
     async (req, res) => {
-        res.send("you are logged in!");
-        console.log("you ");
+        res.redirect("/listings");
     }      
 );
 
