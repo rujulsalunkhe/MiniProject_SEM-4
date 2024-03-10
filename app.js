@@ -7,7 +7,7 @@ const methodOverride = require("method-override");
 const ejsMate = require("ejs-mate");
 const multer = require('multer');
 const wrapAsync = require("./utils/wrapAsync.js");
-
+const Review = require("./models/review.js");
 
 const MONGO_URL="mongodb+srv://atharva:home@cluster0.uddossk.mongodb.net/";
 main().then( () => {
@@ -93,6 +93,20 @@ app.delete("/listings/:id", async (req, res) =>{
    let deletedListing = await Listing.findByIdAndDelete(id)
    console.log(deletedListing);
    res.redirect("/listings/");
+});
+
+//Reviews
+//Post route
+app.post("/listings/:id/reviews", async(req, res) =>{
+let listing= await Listing.findById(req.params.id);
+let newReview = new Review(req.body.review);
+
+listing.reviews.push(newReview);
+
+await newReview.save();
+await listing.save();
+
+res.redirect(`/listings/${listing._id}`);
 });
 // app.get("/testListing", async (req,res) => {
 //  let sampleListing = new Listing({
