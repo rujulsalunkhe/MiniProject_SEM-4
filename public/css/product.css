@@ -146,7 +146,7 @@ body {
 /* nanvbar ends  */
 
 .smallcontainer {
-    max-width: 50%;
+    max-width: 1000px;
     
     margin: auto;
 }
@@ -157,10 +157,7 @@ body {
     justify-content: space-around;
 }
 
-.single-product {
-    margin-top: 80px;
 
-}
 
 .col2 img {
     width: auto;
