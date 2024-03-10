@@ -36,12 +36,6 @@
 
         <hr />
 
-        <h4> All reviews</h4>
-        <ul>
-            <% for(review of listing.reviews) { %>
-                <li> <%= review.comment %> , <%= review.rating %></li>
-            <% } %>
-        </ul>
         <p><b> All reviews</b></p>    
         <% for(review of listing.reviews) { %>
             <div class="card col-5 ms-3 mb-3"> 
