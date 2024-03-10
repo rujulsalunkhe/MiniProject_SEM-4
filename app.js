@@ -127,7 +127,8 @@ listing.reviews.push(newReview);
 await newReview.save();
 await listing.save();
 
-res.redirect(`/listings/${listing._id}`);
+console.log("new review saved");
+res.send("new review saved");
 });
 // app.get("/testListing", async (req,res) => {
 //  let sampleListing = new Listing({
