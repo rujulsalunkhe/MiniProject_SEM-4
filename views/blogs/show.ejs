@@ -1,0 +1,20 @@
+<% layout("/layouts/boilerplate") %>
+<body>
+    <div class="row">
+        <div class="col-8 offset-3">
+        </div>
+        
+            <img src="/images/<%= blog.image %>" class="card-img-top show-img" alt="blogs_image">
+            <div class="card-body">
+                <p class="card-text">
+                    <b><%= blog.title %></b> <br>
+                    <%= blog.description %> <br>
+                    <p class="date" style="text-transform: uppercase"><%= blog.date %></p> <br>
+                </p>
+            </div>
+        
+        <br />
+        
+        
+    </div>
+</body>
