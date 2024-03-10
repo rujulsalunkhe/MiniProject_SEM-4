@@ -52,15 +52,15 @@ passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
-app.get("/demouser", async(req, res) => {
-    let fakeUser = new User({
-        email: "student@gmail.com",
-        username: "student"
-    });
+// app.get("/demouser", async(req, res) => {
+//     let fakeUser = new User({
+//         email: "student@gmail.com",
+//         username: "student"
+//     });
 
-    let registeredUser = await User.register(fakeUser, "hello");
-res.send(registeredUser);
-});
+//     let registeredUser = await User.register(fakeUser, "hello");
+// res.send(registeredUser);
+// });
 
 
 ////////////// Upload Image (Multer) ///////////////////
@@ -334,6 +334,18 @@ app.get("/cart", (req, res) => {
 });
 
 
+//////user/////
+app.get("/signup", (req, res) => {
+    res.render("login/signup.ejs");
+});
+
+app.post("/signup", async(req,res) => {
+    let{username, email, password}= req.body;
+    const newUser = new User({email, username});
+const registeredUser = await User.register(newUser, password);
+console.log(registeredUser);
+res.redirect("/listings");
+});
 
 
 
