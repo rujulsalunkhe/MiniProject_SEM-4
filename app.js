@@ -10,7 +10,9 @@ const ejsMate = require("ejs-mate");
 const multer = require('multer');
 const wrapAsync = require("./utils/wrapAsync.js");
 const session = require("express-session");
-
+const passport = require("passport");
+const LocalStrategy = require("passport-local");
+const User = require("./models/user.js");
 
 const MONGO_URL="mongodb+srv://atharva:home@cluster0.uddossk.mongodb.net/";
 main().then( () => {
@@ -43,6 +45,22 @@ app.get("/", (req, res) => {
 
 app.use(session(sessionOptions));
 
+app.use(passport.initialize());
+app.use(passport.session());
+passport.use(new LocalStrategy(User.authenticate()));
+
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
+// app.get("/demouser", async(req, res) => {
+//     let fakeUser = new User({
+//         email: "student@gmail.com",
+//         username: "student"
+//     });
+
+//     let registeredUser = await User.register(fakeUser, "hello");
+// res.send(registeredUser);
+// });
 
 
 ////////////// Upload Image (Multer) ///////////////////
@@ -316,6 +334,18 @@ app.get("/cart", (req, res) => {
 });
 
 
+//////user/////
+app.get("/signup", (req, res) => {
+    res.render("login/signup.ejs");
+});
+
+app.post("/signup", async(req,res) => {
+    let{username, email, password}= req.body;
+    const newUser = new User({email, username});
+const registeredUser = await User.register(newUser, password);
+console.log(registeredUser);
+res.redirect("/listings");
+});
 
 
 
