@@ -21,27 +21,39 @@
     <form action="#">
       <h2>Login</h2>
       <div class="input-field">
-        <input type="text" id="email" required>
-        <label>Enter your email</label>
+        <form action="/login" method="POST">
+        <input name = "username"  
+        id="username"
+        type = "text" 
+        class="form-control"
+        required
+        />
+        <label>Enter your username</label>
       </div>
       <div class="input-field">
-        <input type="password" id="password" required>
+        <input
+        name = "password"  
+        id="password"
+        type = "password" 
+        class="form-control"
+        required
+        />
         <label>Enter your password</label>
       </div>
-      <div class="forget">
+      <!-- <div class="forget">
         <label for="remember">
           <input type="checkbox" id="remember">
           <p>Remember me</p>
         </label>
         <a href="#">Forgot password?</a>
-      </div>
-      <button type="submit" class="submit-btn" onclick="auth()">Log In</button>
+      </div> -->
+      <button type="submit" class="submit-btn">Log In</button>
       <div class="register">
         <p>Don't have an account? <a href="/signup">Register</a></p>
       </div>
     </form>
   </div>
-  <script>
+  <!-- <script>
     function auth() {
       var email = document.getElementById("email").value;
       var password = document.getElementById("password").value;
@@ -54,7 +66,7 @@
         return;
       }
     }
-  </script>
+  </script> -->
 </body>
 
 </html>

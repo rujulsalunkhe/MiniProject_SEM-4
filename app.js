@@ -340,14 +340,33 @@ app.get("/signup", (req, res) => {
 });
 
 app.post("/signup", async(req,res) => {
-    let{username, email, password}= req.body;
-    const newUser = new User({email, username});
-const registeredUser = await User.register(newUser, password);
-console.log(registeredUser);
-res.redirect("/listings");
+    try{
+        let{username, email, password}= req.body;
+        const newUser = new User({email, username});
+    const registeredUser = await User.register(newUser, password);
+    console.log(registeredUser);
+    res.redirect("/listings");
+    } catch(e) {
+        res.redirect("/signup");
+    }
 });
 
+//login//
 
+app.get("/login", (req,res) => {
+    res.render("login/login.ejs");
+})
+
+app.post(
+    "/login",
+    passport.authenticate("local", {
+        failureRedirect: "/login",
+    }),
+    async (req, res) => {
+        res.send("you are logged in!");
+        console.log("you ");
+    }      
+);
 
 app.listen(3000, () =>{
     console.log("Server is listening to port 3000");
