@@ -158,12 +158,33 @@ app.get("/listings/:id", async (req, res) => {
 })
 
 //Create Route
-app.post("/listings",upload.single('listing[image]'), wrapAsync(async (req, res, next) => {
-    const newListing = new Listing(req.body.listing);
-    await newListing.save();
-    res.redirect("/listings");
-}
-));
+app.post("/listings", upload.single('listing[image]'), async (req, res, next) => {
+    try {
+        // Log the received file
+        console.log("Received file:", req.file);
+
+        // Check if file exists
+        if (!req.file) {
+            return res.status(400).send("No file uploaded");
+        }
+
+        // Continue with saving the listing entry
+        const newListing = new Listing({
+            // Access other fields using req.body.listing
+            title: req.body.listing.title,
+            description: req.body.listing.description,
+            image: req.file.filename, // Save the filename to the database
+            location: req.body.listing.location,
+            price: req.body.listing.price
+        });
+
+        await newListing.save();
+        res.redirect("/listings");
+    } catch(err) {
+        next(err);
+    }
+});
+
 
 //Edit route
 app.get("/listings/:id/edit", async(req,res) => {
