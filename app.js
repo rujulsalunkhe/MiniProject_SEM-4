@@ -3,6 +3,7 @@ const app = express();
 const mongoose = require("mongoose");
 const Listing = require("./models/listing.js");
 const Blog = require("./models/blogs.js");
+const Review = require("./models/review.js");
 const path = require("path");
 const methodOverride = require("method-override");
 const ejsMate = require("ejs-mate");
@@ -153,7 +154,7 @@ app.get("/listings/new", (req, res) => {
 //Show Route
 app.get("/listings/:id", async (req, res) => {
     let {id} = req.params;
-    const listing = await Listing.findById(id);
+    const listing = await Listing.findById(id).populate("reviews");
     res.render("Listings/show.ejs", {listing});
 })
 
@@ -210,18 +211,28 @@ app.delete("/listings/:id", async (req, res) =>{
 
 //Reviews
 //Post route
-app.post("/listings/:id/reviews", async(req, res) =>{
-let listing= await Listing.findById(req.params.id);
-let newReview = new Review(req.body.review);
+app.post("/listings/:id/reviews", async (req, res) => {
+    try {
+        const listing = await Listing.findById(req.params.id);
+        if (!listing) {
+            return res.status(404).send("Listing not found");
+        }
 
-listing.reviews.push(newReview);
+        const newReview = new Review(req.body.review);
+        listing.reviews.push(newReview);
 
-await newReview.save();
-await listing.save();
+        await newReview.save();
+        await listing.save();
 
-console.log("new review saved");
-res.send("new review saved");
+        console.log("New review saved:", newReview);
+        res.send("New review saved");
+    } catch (error) {
+        console.error("Error saving review:", error);
+        res.status(500).send("Error saving review");
+    }
 });
+
+
 // app.get("/testListing", async (req,res) => {
 //  let sampleListing = new Listing({
 //     title: "wooden kitchen",
