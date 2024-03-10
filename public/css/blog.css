@@ -466,3 +466,8 @@ hr {
     padding: 100px;
     font-family: var(--font2);
 }
+
+textarea {
+    white-space: pre-line; /* Preserve line breaks */
+    word-wrap: break-word; /* Wrap long words */
+}
