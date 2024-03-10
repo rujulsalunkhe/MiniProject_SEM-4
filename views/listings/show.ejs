@@ -24,8 +24,10 @@
                 <h1><%= listing.title %></h1>
                 <h4>Rs <%= listing.price %></h4>
                 <h6>*Terms and conditions applied <br>Read More</h6>
-                <input type="number" value="1">
-                <a href="" class="btn">Add to Cart</a>
+                <input type="number" id="quantityInput" value="1">
+                <button id="addToCartBtn" class="btn">Add to Cart</button>
+
+
                 
             </div>
 
@@ -76,5 +78,15 @@
 
     <%- include("../includes/footer.ejs") %>
 </body>
+<script>
+    document.getElementById("addToCartBtn").addEventListener("click", function() {
+        // Get the quantity value from the input field
+        const quantity = document.getElementById("quantityInput").value;
+        // Construct the URL with the quantity as a query parameter
+        const url = `/cart?productName=<%= listing.title %>&price=<%= listing.price %>&image=<%= listing.image %>&quantity=${quantity}`;
+        // Navigate to the cart page
+        window.location.href = url;
+    });
+    </script>
 
 </html>

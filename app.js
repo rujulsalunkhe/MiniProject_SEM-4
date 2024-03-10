@@ -284,7 +284,27 @@ app.get("/blogs", async (req,res) => {
     });
 
 
-  
+/////////////// Add to Cart ////////////////  
+
+app.post("/cart", (req, res) => {
+    const { productName, price, image, quantity } = req.body;
+    res.redirect(`/cart?productName=${productName}&price=${price}&image=${image}&quantity=${quantity}`);
+});
+
+
+app.get("/cart", (req, res) => {
+    const { productName, price, image, quantity } = req.query;
+    const listing = {
+        title: productName,
+        price: price,
+        image: image,
+        // Add other properties as needed
+    };
+    res.render("cart/cart", { listing, quantity });
+});
+
+
+
 
 
 app.listen(3000, () =>{
