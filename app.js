@@ -9,6 +9,7 @@ const methodOverride = require("method-override");
 const ejsMate = require("ejs-mate");
 const multer = require('multer');
 const wrapAsync = require("./utils/wrapAsync.js");
+const session = require("express-session");
 
 
 const MONGO_URL="mongodb+srv://atharva:home@cluster0.uddossk.mongodb.net/";
@@ -29,9 +30,19 @@ app.use(methodOverride("_method"));
 app.engine('ejs' , ejsMate);
 app.use(express.static(path.join(__dirname, "/public")));
 
+const sessionOptions ={
+secret: "mysupersecretcode",
+resave: false,
+saveUninitialized: true,
+httpOnly: true,
+};
+
 app.get("/", (req, res) => {
     res.send("hi, I am root");
 });
+
+app.use(session(sessionOptions));
+
 
 
 ////////////// Upload Image (Multer) ///////////////////
@@ -180,6 +191,7 @@ app.post("/listings", upload.single('listing[image]'), async (req, res, next) =>
         });
 
         await newListing.save();
+        req.flash("Success", "New Listing created!");
         res.redirect("/listings");
     } catch(err) {
         next(err);
