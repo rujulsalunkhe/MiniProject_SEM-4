@@ -213,18 +213,26 @@ app.delete("/listings/:id", async (req, res) =>{
 //Post route
 app.post("/listings/:id/reviews", async (req, res) => {
     try {
-        let listing = await Listing.findById(req.params.id);
-        let newReview = new Review(req.body.review);
+        const listing = await Listing.findById(req.params.id);
+        if (!listing) {
+            return res.status(404).send("Listing not found");
+        }
+
+        const newReview = new Review(req.body.review);
         listing.reviews.push(newReview);
+
         await newReview.save();
         await listing.save();
-        console.log("New review saved");
-        res.send("New review saved");
+
+        console.log("New review saved:", newReview);
+        return res.send("New review saved");
     } catch (error) {
         console.error("Error saving review:", error);
-        res.status(500).send("Error saving review");
+        return res.status(500).send("Error saving review: " + error.message);
     }
 });
+
+
 
 // app.get("/testListing", async (req,res) => {
 //  let sampleListing = new Listing({
