@@ -1,19 +1,76 @@
-<!-- cart.ejs -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <!-- Head content goes here -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <link rel="stylesheet" href="/css/cartt.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="shortcut icon" href="./favicon_io/favicon.ico">
 </head>
+
 <body>
-    <!-- Display product details in the cart -->
-    <h2>Cart</h2>
-    <div>
-        <p>Product Name: <%= listing.title %></p>
-        <p>Price: <%= listing.price %></p>
-        <p>Image: <img src="/images/<%= listing.image %>" alt="Product Image"></p>
-        <p>Quantity: <%= quantity %></p>
+      <div class="wrapper">
+        <h1>Shopping Cart</h1>
+        <div class="project">
+            <div class="shop">
+                <div class="box">
+                    <img src="/images/<%= listing.image %>" alt="Product Image">
+                    <div class="content">
+                        <h3><%= listing.title %></h3>
+                        <h4>Price: <%= listing.price %></h4>
+                        <p class="unit">Quantity: <input value="<%= quantity %>"></p>
+                        <p class="btn-area">
+                            <i class='bx bxs-trash'></i>
+                            <span class="btn2">Remove</span>
+                        </p>
+                    </div>
+                </div>
+                
+
+            <div class="right-bar">
+                <p><span id="subtotal">Subtotal</span> <span>Rs. <%= quantity * listing.price %></span></p>
+
+                <hr>
+                <p><span>Tax (5%)</span> <span>$6</span></p>
+                <hr>
+                <p><span>Shipping</span> <span>$15</span></p>
+                <hr>
+                <p><span>Total</span> <span>Rs. <%= quantity * listing.price %></span></p>
+
+                <a href="#"><i class='bx bxs-cart-alt'></i>Checkout</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Get the quantity and price values
+        const quantityInput = document.getElementById("quantityInput");
+        const price = <%= listing.price %>; // Assuming price is passed from the server-side
+        
+        // Calculate subtotal function
+        function calculateSubtotal() {
+            const quantity = quantityInput.value;
+            const subtotal = quantity * price;
+            return subtotal;
+        }
+        
+        // Function to update subtotal text
+        function updateSubtotal() {
+            const subtotal = calculateSubtotal();
+            document.getElementById("subtotal").innerText = `$${subtotal}`;
+        }
+        
+        // Update subtotal when quantity input changes
+        quantityInput.addEventListener("input", updateSubtotal);
+        
+        // Initialize subtotal on page load
+        updateSubtotal();
+        </script>
         
 
-    </div>
+
 </body>
+
 </html>
