@@ -173,6 +173,10 @@ app.get("/listings", async (req,res) => {
 
     //new route
 app.get("/listings/new", (req, res) => {
+    console.log(req.user);
+    if(!req.isAuthenticated()) {
+       return req.redirect("/login");
+    }
     res.render("listings/new.ejs");
 });
 
