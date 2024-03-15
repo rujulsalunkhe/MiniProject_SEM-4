@@ -13,6 +13,7 @@ const session = require("express-session");
 const passport = require("passport");
 const LocalStrategy = require("passport-local");
 const User = require("./models/user.js");
+const flash = require("connect-flash");
 
 const MONGO_URL="mongodb+srv://atharva:home@cluster0.uddossk.mongodb.net/";
 main().then( () => {
@@ -36,7 +37,11 @@ const sessionOptions ={
 secret: "mysupersecretcode",
 resave: false,
 saveUninitialized: true,
-httpOnly: true,
+cookie: {
+    expires: Date.now() + 7 * 24 * 60 * 60 * 1000,
+    maxAge: 7 * 24 * 60 * 60 * 1000,
+    httpOnly: true,
+},
 };
 
 app.get("/", (req, res) => {
@@ -44,6 +49,8 @@ app.get("/", (req, res) => {
 });
 
 app.use(session(sessionOptions));
+app.use(flash());
+
 
 app.use(passport.initialize());
 app.use(passport.session());
