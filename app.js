@@ -14,7 +14,7 @@ const passport = require("passport");
 const LocalStrategy = require("passport-local");
 const User = require("./models/user.js");
 const flash = require("connect-flash");
-const {isLoggedIn} = require("./middleware.js");
+const {isLoggedIn, savedRedirectUrl} = require("./middleware.js");
 
 const MONGO_URL="mongodb+srv://atharva:home@cluster0.uddossk.mongodb.net/";
 main().then( () => {
@@ -352,13 +352,19 @@ app.get("/signup", (req, res) => {
     res.render("login/signup.ejs");
 });
 
-app.post("/signup", async(req,res) => {
+app.post("/signup", savedRedirectUrl, async(req,res) => {
     try{
         let{username, email, password}= req.body;
         const newUser = new User({email, username});
     const registeredUser = await User.register(newUser, password);
     console.log(registeredUser);
-    res.redirect("/listings");
+    req.login(registeredUser, (err) => {
+        if(err) {
+            return next(err);
+        }
+        let redirectUrl = res.locals.redirectUrl || "/listings";
+        res.redirect(redirectUrl);
+    });
     } catch(e) {
         res.redirect("/signup");
     }
