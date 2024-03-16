@@ -60,6 +60,11 @@ passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
+app.use((req, res, next) => {
+    res.locals.currUser = req.user;
+    next();
+});
+
 // app.get("/demouser", async(req, res) => {
 //     let fakeUser = new User({
 //         email: "student@gmail.com",
@@ -357,6 +362,15 @@ app.post("/signup", async(req,res) => {
     } catch(e) {
         res.redirect("/signup");
     }
+});
+
+app.get("/logout", (req, res, next) => {
+    req.logout((err) => {
+        if(err) {
+           return next(err);
+        }
+        res.redirect("/listings");
+    });
 });
 
 //login//
