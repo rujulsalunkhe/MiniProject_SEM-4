@@ -24,13 +24,18 @@
                 <li><a class="item" href="/blogs">Blogs</a></li>
                 <li><a class="item" href="/cart">Cart</a></li>
                 <li><a class="item" href="/contact"><span id="item-inuse">Contact Us</span></a></li>
-
+             <% if(!currUser) { %>
                 <a href="/login" id="getq">Login <img id="arrow" src="./Img_files/maki_arrow.svg" alt="">
-                </a>
+                <% } %>  <% if(currUser) { %>
+                    <a href="/logout" id="getq">Logout <img id="arrow" src="./Img_files/maki_arrow.svg" alt="">
+                        <% } %>
+                    </a>
             </ul>
         </div>
     </nav>
     <!--navbar ends-->
+
+    
 
 <div class="form">
     <div class="wrapper">

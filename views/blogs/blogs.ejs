@@ -11,10 +11,33 @@
 </head>
 
 <body>
-    <%- include("../includes/navbar.ejs") %>
-    <h3>All Blogs</h3>
-    <form method="GET" action="/blogs/new">
-        <% if(currUser) { %>
+    <!--navbar-->
+    <nav id="navbar">
+        <div id="logo">
+            <img src="/Img_files/logo w name.png" alt="logo">
+        </div>
+        <div class="right">
+
+            <ul>
+                <li><a class="item" href="/home">Home</a></li>
+                <li><a class="item " href="/listings">Store</a></li>
+                <li><a class="item" href="/blogs"><span id="item-inuse">Blogs</span></a></li>
+                <li><a class="item" href="/cart">Cart</a></li>
+                <li><a class="item" href="/contact">Contact Us</a></li>
+             <% if(!currUser) { %>
+                <a href="/login" id="getq">Login <img id="arrow" src="./Img_files/maki_arrow.svg" alt="">
+                <% } %>  <% if(currUser) { %>
+                    <a href="/logout" id="getq">Logout <img id="arrow" src="./Img_files/maki_arrow.svg" alt="">
+                        <% } %>
+                    </a>
+            </ul>
+        </div>
+    </nav>
+    <!--navbar ends-->
+
+    <% if(currUser) { %>
+        <h3>All Blogs</h3>
+        <form method="GET" action="/blogs/new">
              <button>create New Blog</button>
              <% } %>
     </form>

@@ -11,7 +11,30 @@
 </head>
 
 <body>
-    <%- include("../includes/navbar.ejs") %>
+    <!--navbar-->
+    <nav id="navbar">
+        <div id="logo">
+            <img src="/Img_files/logo w name.png" alt="logo">
+        </div>
+        <div class="right">
+
+            <ul>
+                <li><a class="item" href="/home">Home</a></li>
+                <li><a class="item " href="/listings">Store</a></li>
+                <li><a class="item" href="/blogs">Blogs</a></li>
+                <li><a class="item" href="/cart"><span id="item-inuse">Cart</span></a></li>
+                <li><a class="item" href="/contact">Contact Us</a></li>
+             <% if(!currUser) { %>
+                <a href="/login" id="getq">Login <img id="arrow" src="./Img_files/maki_arrow.svg" alt="">
+                <% } %>  <% if(currUser) { %>
+                    <a href="/logout" id="getq">Logout <img id="arrow" src="./Img_files/maki_arrow.svg" alt="">
+                        <% } %>
+                    </a>
+            </ul>
+        </div>
+    </nav>
+    <!--navbar ends-->
+    
       <div class="wrapper">
         <h1>Shopping Cart</h1>
         <div class="project">

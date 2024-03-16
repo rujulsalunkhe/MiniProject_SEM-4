@@ -2,9 +2,9 @@
 <% layout("/layouts/boilerplate") %>
 
 <body>
+  <% if(currUser) { %>
     <h3>All listings</h3>
-     <form method="GET" action="/listings/new">
-      <% if(currUser) { %>
+    <form method="GET" action="/listings/new">
         <button>create New listings</button>
         <% } %>
     </form> 
