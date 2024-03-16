@@ -398,3 +398,10 @@ app.post(
 app.listen(3000, () =>{
     console.log("Server is listening to port 3000");
 });
+
+/////////////// Contact ////////////////  
+
+app.get("/contact", async (req,res) => {
+    const allListings = await Listing.find({});
+    res.render("contact/contact.ejs",{allListings});
+    });
