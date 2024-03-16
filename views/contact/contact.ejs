@@ -14,7 +14,7 @@
     <!--navbar-->
     <nav id="navbar">
         <div id="logo">
-            <img src="./logo w name.png" alt="logo">
+            <img src="/Img_files/logo w name.png" alt="logo">
         </div>
         <div class="right">
 
@@ -32,26 +32,63 @@
     </nav>
     <!--navbar ends-->
 
-    <div class="form">
-        <div class="wrapper">
-            <div class="title">
-                <h1>Contact Us Form</h1>
-            </div>
-            <div class="contact-form">
-                <div class="input-fields">
-                    <input type="text" class="input" placeholder="Name">
-                    <input type="text" class="input" placeholder="Email Address">
-                    <input type="text" class="input" placeholder="Phone">
-                    <input type="text" class="input" placeholder="Subject">
-                </div>
-                <div class="msg">
-                    <textarea placeholder="Message"></textarea>
-                    <div class="btn">send</div>
-                </div>
-            </div>
+<div class="form">
+    <div class="wrapper">
+        <div class="title">
+            <h1>Contact Us Form</h1>
         </div>
-
+    <div class="contact-form">
+    <form method="POST" action="/contact" novalidate class="needs-validation" enctype="multipart/form-data">
+        <div class="input-fields">
+            <input name="contact[name]"
+                   placeholder="Name"
+                   type="text"
+                   class="input"
+                   required
+            />
+        
+        <input name="contact[email]"
+               placeholder="Email Address"
+               type="text"
+               class="input"
+               required
+        />
+        <div>
+            <input name="contact[phone]"
+                   placeholder="Phone"
+                   type="text"
+                   class="input"
+                   required
+            />
+        </div>
+        <div>
+            <input name="contact[subject]"
+                   placeholder="Subject"
+                   type="text"
+                   class="input"
+                   required
+            />
+        </div>
     </div>
+    <div class="msg">
+        <div>
+
+            <textarea
+                name="contact[message]"
+                placeholder="Message"
+                class="input" required
+            ></textarea>
+        </div>
+    
+    
+        <button class="btn">Send</button>
+    </div>
+
+    </form>
+</div>
+</div>
+</div>
+
 
 
 
@@ -60,7 +97,7 @@
     <footer>
         <div class="row">
             <div class="col">
-                <img src="./logo.jpg" alt="logo"><br>
+                <img src="/Img_files/logo.jpg" alt="logo"><br>
                 <p>
                     "Transform your space with our curated
                     collection of stylish and functional furniture.

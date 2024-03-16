@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const Listing = require("./models/listing.js");
 const Blog = require("./models/blogs.js");
 const Review = require("./models/review.js");
+const Contact = require("./models/contact.js");
 const path = require("path");
 const methodOverride = require("method-override");
 const ejsMate = require("ejs-mate");
@@ -399,3 +400,27 @@ app.get("/contact", async (req,res) => {
     const allListings = await Listing.find({});
     res.render("contact/contact.ejs",{allListings});
     });
+
+    app.post("/contact", async (req, res, next) => {
+        try {
+            // Create a new Contact instance using the entire request body
+            const newContact = new Contact({
+                name: req.body.name,
+                email: req.body.email,
+                phone: req.body.phone,
+                subject: req.body.subject,
+                message: req.body.message
+            });
+            
+    
+            // Save the new contact entry to the database
+            await newContact.save();
+    
+            // Redirect the user after successfully saving the contact
+            res.redirect("/contact");
+        } catch(err) {
+            // Pass any errors to the error handling middleware
+            next(err);
+        }
+    });
+    

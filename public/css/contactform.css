@@ -143,16 +143,9 @@ body {
     margin-bottom: 25px;
 }
 
-.form .contact-form {
-    display: flex;
-}
 
-.form .input-fields {
-    display: flex;
-    flex-direction: column;
-    margin-right: 4%;
-}
 
+s
 .form .input-fields,
 .form .msg {
     width: 48%;
