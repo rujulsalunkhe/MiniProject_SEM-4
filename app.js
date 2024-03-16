@@ -14,6 +14,7 @@ const passport = require("passport");
 const LocalStrategy = require("passport-local");
 const User = require("./models/user.js");
 const flash = require("connect-flash");
+const {isLoggedIn} = require("./middleware.js");
 
 const MONGO_URL="mongodb+srv://atharva:home@cluster0.uddossk.mongodb.net/";
 main().then( () => {
@@ -94,7 +95,7 @@ app.get("/blogs", async (req,res) => {
 
 
     //new route
-app.get("/blogs/new", (req, res) => {
+app.get("/blogs/new", isLoggedIn, (req, res) => {
     res.render("blogs/new.ejs");
 });
 
@@ -145,7 +146,7 @@ app.post("/blogs", upload.single('blogs[image]'), async (req, res, next) => {
 
 
 //Edit route
-app.get("/blogs/:id/edit", async(req,res) => {
+app.get("/blogs/:id/edit", isLoggedIn, async(req,res) => {
     let {id} = req.params;
     const Blog = await Blog.findById(id); // Use Blogs model here
     res.render("blogs/edit.ejs", {Blog}); // Pass 'blog' instead of 'blogs'
@@ -153,14 +154,14 @@ app.get("/blogs/:id/edit", async(req,res) => {
 
 
 //Update route
-app.put("/blogs/:id", async (req, res) => {
+app.put("/blogs/:id", isLoggedIn, async (req, res) => {
     let {id} = req.params;
     await Blogs.findByIdAndUpdate(id, {...req.body.listing});
     res.redirect("/blogs");
 });
 
 //Delete route
-app.delete("/blogs/:id", async (req, res) =>{
+app.delete("/blogs/:id",isLoggedIn, async (req, res) =>{
     let {id} = req.params;
    let deletedBlog = await Blogs.findByIdAndDelete(id); // Use Blogs model here
    console.log(deletedBlog);
@@ -179,11 +180,7 @@ app.get("/listings", async (req,res) => {
     });
 
     //new route
-app.get("/listings/new", (req, res) => {
-    console.log(req.user);
-    if(!req.isAuthenticated()) {
-       return req.redirect("/login");
-    }
+app.get("/listings/new", isLoggedIn, (req, res) => {
     res.render("listings/new.ejs");
 });
 
@@ -229,21 +226,21 @@ app.post("/listings", upload.single('listing[image]'), async (req, res, next) =>
 
 
 //Edit route
-app.get("/listings/:id/edit", async(req,res) => {
+app.get("/listings/:id/edit", isLoggedIn, async(req,res) => {
     let {id} = req.params;
     const listing = await Listing.findById(id);
     res.render("listings/edit.ejs", {listing});
 });
 
 //Update route
-app.put("/listings/:id", async (req, res) => {
+app.put("/listings/:id", isLoggedIn, async (req, res) => {
     let {id} = req.params;
     await Listing.findByIdAndUpdate(id, {...req.body.listing});
     res.redirect("/listings");
 });
 
 //Delete route
-app.delete("/listings/:id", async (req, res) =>{
+app.delete("/listings/:id",isLoggedIn, async (req, res) =>{
     let {id} = req.params;
    let deletedListing = await Listing.findByIdAndDelete(id)
    console.log(deletedListing);
