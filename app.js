@@ -220,7 +220,8 @@ app.post("/listings", upload.single('listing[image]'), async (req, res, next) =>
             description: req.body.listing.description,
             image: req.file.filename, // Save the filename to the database
             location: req.body.listing.location,
-            price: req.body.listing.price
+            price: req.body.listing.price,
+            category: req.body.listing.category,
         });
 
         await newListing.save();
