@@ -16,6 +16,10 @@ const listingSchema = new Schema({
             ref: "Review",
         },
     ],
+    category: {
+        type:String,
+        enum: ["LivingRoom" , "Kitchen"]
+    },
 });
 
 const Listing = mongoose.model("Listing", listingSchema);

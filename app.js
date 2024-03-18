@@ -198,8 +198,9 @@ app.get("/listings/new", isLoggedIn, (req, res) => {
 app.get("/listings/:id", async (req, res) => {
     let {id} = req.params;
     const listing = await Listing.findById(id).populate("reviews");
+    console.log(listing);
     res.render("Listings/show.ejs", {listing});
-})
+});
 
 //Create Route
 app.post("/listings", upload.single('listing[image]'), async (req, res, next) => {
@@ -396,9 +397,7 @@ app.post(
     }      
 );
 
-app.listen(3000, () =>{
-    console.log("Server is listening to port 3000");
-});
+
 
 /////////////// Contact ////////////////  
 
@@ -430,3 +429,30 @@ app.get("/contact", async (req,res) => {
         }
     });
     
+
+    ///////////category//////////////
+    app.get('/category/livingroom', async (req, res) => {
+        try {
+            const category = 'LivingRoom';
+            const listings = await Listing.find({ category: category });
+            res.render('category/livingroom.ejs', { category: category, listings: listings });
+        } catch (err) {
+            console.error('Error fetching living room listings:', err);
+            res.status(500).send('Error fetching living room listings');
+        }
+    });
+
+    app.get('/category/kitchen', async (req, res) => {
+        try {
+            const category = 'Kitchen';
+            const listings = await Listing.find({ category: category });
+            res.render('category/kitchen.ejs', { category: category, listings: listings });
+        } catch (err) {
+            console.error('Error fetching kitchen listings:', err);
+            res.status(500).send('Error fetching kitchen listings');
+        }
+    });
+    
+    app.listen(3000, () =>{
+        console.log("Server is listening to port 3000");
+    });

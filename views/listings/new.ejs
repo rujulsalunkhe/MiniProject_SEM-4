@@ -37,6 +37,16 @@
   <input name="listing[location]" placeholder="enter location" type="text" required />
   <div class="invalid-feedback">Location should be valid</div> 
 </div>
+<div>
+  <label for="category" class="form-label">Category</label>
+  <select name="listing[category]" class="form-select" required>
+    <option value="">Select category</option>
+    <option value="LivingRoom">Living Room</option>
+    <option value="Kitchen">Kitchen</option>
+  </select>
+  <div class="invalid-feedback">Please select a category</div> 
+</div>
+<div>
 <button class="btn btn-dark">Add</button>
     </form>
   </div>
