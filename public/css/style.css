@@ -25,6 +25,14 @@ body {
     font-family: 'poppins', sans-serif;
 }
 
+a {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
 /* CSS Variables */
 :root {
     --navbar-height: 59px;

@@ -1,0 +1,133 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Store</title>
+    <link rel="stylesheet" href="/css/store.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <link rel="shortcut icon" href="./favicon_io/favicon.ico">
+
+</head>
+
+<body>
+
+    <!--navbar-->
+    <nav id="navbar">
+      <div id="logo">
+          <img src="/Img_files/logo w name.png" alt="logo">
+      </div>
+      <div class="right">
+
+          <ul>
+              <li><a class="item" href="/home">Home</a></li>
+              <li><a class="item " href="/listings"><span id="item-inuse">Store</span></a></li>
+              <li><a class="item" href="/blogs">Blogs</a></li>
+              <li><a class="item" href="/cart">Cart</a></li>
+              <li><a class="item" href="/contact">Contact Us</a></li>
+           <% if(!currUser) { %>
+              <a href="/login" id="getq">Login <img id="arrow" src="/Img_files/maki_arrow.svg" alt="">
+              <% } %>  <% if(currUser) { %>
+                  <a href="/logout" id="getq">Logout <img id="arrow" src="/Img_files/maki_arrow.svg" alt="">
+                      <% } %>
+                  </a>
+          </ul>
+      </div>
+  </nav>
+  <!--navbar ends-->
+
+    <body>
+
+
+
+
+        <section class="products" id="products">
+            <h1 class="h-primary center">
+                <div class="sec-head"> Latest <span>Kitchen Products</span></div>
+            </h1>
+            <div class="product-container">
+                <% for(let listing of listings) { %>
+                    <% if(listing.category === "Kitchen") { %>
+                        <a href="/listings/<%= listing._id %>" class="listing-link">
+                            <div class="box-container">
+                                <div class="box">
+                                    <div class="image">
+                                        <img src="/images/<%= listing.image %>" alt="">
+                                    </div>
+                                    <div class="content">
+                                        <h2><%= listing.title %></h2>
+                                        <div class="price">&#8377; <%= listing.price %></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    <% } %>
+                <% } %>
+            </div>
+        </section>
+        
+        
+  
+
+
+    <!-- footer starts here -->
+    <footer>
+      <div class="row">
+          <div class="col">
+              <img src="./Img_files/logo.jpg" alt="logo"><br>
+              <p>
+                  "Transform your space with our curated
+                  collection of stylish and functional furniture.
+                  From cozy seating to elegant accents, discover
+                  the perfect pieces to elevate your home. Shop
+                  now for quality craftsmanship and timeless designs."
+              </p>
+          </div>
+          <div class="col">
+              <h3>Office <div class="underline"></div>
+              </h3>
+              <p>Yet to be filled</p>
+              <p class="email-id">homebeing@outlook.com</p>
+              <h4>+91 - xxxxx xxxxx</h4>
+          </div>
+          <div class="col">
+              <h3>Links <div class="underline"></div>
+              </h3>
+              <ul>
+                  <li><a href="/home">Home</a></li>
+                  <li><a href="/listings">Store</a></li>
+                  <li><a href="/blogs">Blogs</a></li>
+                  <li><a href="/cart">Cart</a></li>
+                  <li><a href="/contact">Contacts Us</a></li>
+              </ul>
+          </div>
+          <div class="col">
+              <h3>Newsletter <div class="underline"></div>
+              </h3>
+              <form>
+                  <i class='bx bx-envelope'></i>
+                  <input type="email" placeholder="enter your email id" required>
+                  <button type="submit"><i class='bx bxs-right-arrow-alt'></i></button>
+              </form>
+              <div class="social-icons">
+                  <i class='bx bxl-facebook-square'></i>
+                  <i class='bx bxl-whatsapp'></i>
+                  <i class='bx bxl-twitter'></i>
+                  <i class='bx bxl-instagram'></i>
+              </div>
+          </div>
+      </div>
+      <hr>
+      <p class="copyright"> Home Being 2024 - All Rights Reserved</p>
+  </footer>
+
+</body>
+
+</html>
+
+</body>
+
+</html>
