@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,183 +16,187 @@
 
     <!--navbar-->
     <nav id="navbar">
-      <div id="logo">
-          <img src="/Img_files/logo w name.png" alt="logo">
-      </div>
-      <div class="right">
+        <div id="logo">
+            <img src="/Img_files/logo w name.png" alt="logo">
+        </div>
+        <div class="right">
 
-          <ul>
-              <li><a class="item" href="/home">Home</a></li>
-              <li><a class="item " href="/listings"><span id="item-inuse">Store</span></a></li>
-              <li><a class="item" href="/blogs">Blogs</a></li>
-              <li><a class="item" href="/cart">Cart</a></li>
-              <li><a class="item" href="/contact">Contact Us</a></li>
-           <% if(!currUser) { %>
-              <a href="/login" id="getq">Login <img id="arrow" src="./Img_files/maki_arrow.svg" alt="">
-              <% } %>  <% if(currUser) { %>
-                  <a href="/logout" id="getq">Logout <img id="arrow" src="./Img_files/maki_arrow.svg" alt="">
-                      <% } %>
-                  </a>
-          </ul>
-      </div>
-  </nav>
-  <!--navbar ends-->
+            <ul>
+                <li><a class="item" href="/home">Home</a></li>
+                <li><a class="item " href="/listings"><span id="item-inuse">Store</span></a></li>
+                <li><a class="item" href="/blogs">Blogs</a></li>
+                <li><a class="item" href="/cart">Cart</a></li>
+                <li><a class="item" href="/contact">Contact Us</a></li>
+                <% if(!currUser) { %>
+                    <a href="/login" id="getq">Login <img id="arrow" src="./Img_files/maki_arrow.svg" alt="">
+                        <% } %>
+                            <% if(currUser) { %>
+                                <a href="/logout" id="getq">Logout <img id="arrow" src="./Img_files/maki_arrow.svg"
+                                        alt="">
+                                    <% } %>
+                                </a>
+            </ul>
+        </div>
+    </nav>
+    <!--navbar ends-->
 
     <body>
-      <% if(currUser) { %>
-        <h3>All listings</h3>
-        <form method="GET" action="/listings/new">
-          <button>create New listings</button>
-          <% } %>
-      </form> 
+        <% if(currUser) { %>
+            <form method="GET" action="/listings/new">
+                <button>create New listings</button>
+                <% } %>
+            </form>
 
-    <section id="home">
+            <section id="home">
 
-        <div class="block-color">
+                <div class="block-color">
 
 
-            <img id="home-img" src="./Img_files/index imgs/house.jpg" alt="">
+                    <img id="home-img" src="./Img_files/index imgs/house.jpg" alt="">
 
-            <div class="home-txt">"An interior is the natural projection of the soul."
-                <div>- Coco Chanel</div>
-            </div>
+                    <div class="home-txt">"An interior is the natural projection of the soul."
+                        <div>- Coco Chanel</div>
+                    </div>
 
-        </div>
-
-    </section>
-
-    <section class="services">
-        <h1 class="h-primary center">
-            <div class="sec-head">
-                Choose from Our Services
-            </div>
-        </h1>
-        <div id="services">
-            <div class="box-pair">
-                <div class="box">
-                    <img src="./Img_files/Store_home.jpeg" alt="Room Img">
-                    <h2 class="h-secondary ">Living Room</h2>
-                    <p class="center">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse atque
-                        expedita,Lorem
-                        ipsum dolor sit amet consectetur adipisicing elit. Id </p>
-                </div>
-                <div class="box">
-                    <img src="./Img_files/index imgs/kitchen.jpg" alt="Room Img">
-                    <h2 class="h-secondary ">Kitchen</h2>
-                    <p class="center">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse atque
-                        expedita,Lorem
-                        ipsum dolor sit amet consectetur adipisicing elit. </p>
-                </div>
-            </div>
-
-            <div class="box-pair">
-                <div class="box">
-                    <img src="./Img_files/index imgs/room.jpg" alt="Room Img">
-                    <h2 class="h-secondary">Bedroom</h2>
-                    <p class="center">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse atque
-                        expedita,Lorem
-                        ipsum dolor sit amet consectetur adipisicing elit. Eaque </p>
                 </div>
 
-                <div class="box">
-                    <img src="./Img_files/index imgs/paint.jpg" alt="Room Img">
-                    <h2 class="h-secondary">Quotation</h2>
-                    <p class="center">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse atque
-                        expedita,Lorem
-                        ipsum dolor sit amet consectetur adipisicing elit. Eaque </p>
+            </section>
+
+            <section class="services">
+                <h1 class="h-primary center">
+                    <div class="sec-head">
+                        Choose from Our Services
+                    </div>
+                </h1>
+                <div id="services">
+                    <div class="box-pair">
+                        <div class="box">
+                            <img src="./Img_files/Store_home.jpeg" alt="Room Img">
+                            <h2 class="h-secondary ">Living Room</h2>
+                            <p class="center">Dive into the heart of comfort and style! Click below to discover our
+                                curated selection of living room essentials. From plush sofas to elegant décor,
+                                transform your space into a sanctuary of relaxation and entertainment. </p>
+                        </div>
+                        <div class="box">
+                            <img src="./Img_files/index imgs/kitchen.jpg" alt="Room Img">
+                            <h2 class="h-secondary ">Kitchen</h2>
+                            <p class="center">Indulge in the art of relaxation! Click below to explore our collection of
+                                bedroom essentials designed to create your personal haven. From cozy bedding to tranquil
+                                accents, make your bedroom a sanctuary for rest and rejuvenation. </p>
+                        </div>
+                    </div>
+
+                    <div class="box-pair">
+                        <div class="box">
+                            <img src="./Img_files/index imgs/room.jpg" alt="Room Img">
+                            <h2 class="h-secondary">Bedroom</h2>
+                            <p class="center">Indulge in the art of relaxation! Click below to explore our collection of
+                                bedroom essentials designed to create your personal haven. From cozy bedding to tranquil
+                                accents, make your bedroom a sanctuary for rest and rejuvenation.</p>
+                        </div>
+
+                        <!-- <div class="box">
+                            <img src="./Img_files/index imgs/paint.jpg" alt="Room Img">
+                            <h2 class="h-secondary">Quotation</h2>
+                            <p class="center">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse atque
+                                expedita,Lorem
+                                ipsum dolor sit amet consectetur adipisicing elit. Eaque </p>
+                        </div>
+                    </div>
+
+                    <div class="box-pair">
+                        <div class="box">
+                            <img src="./Img_files/index imgs/drawing.jpg" alt="Room Img">
+                            <h2 class="h-secondary">Consultation</h2>
+                            <p class="center">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse atque
+                                expedita,Lorem
+                                ipsum dolor sit amet consectetur adipisicing elit. Eaque </p>
+                        </div>
+                    </div> -->
+
+                    </div>
+            </section>
+
+            <section class="products" id="products">
+                <h1 class="h-primary center">
+                    <div class="sec-head"> Latest <span>Products</span></div>
+                </h1>
+                <div class="product-container">
+                    <% for(let listing of allListings) { %>
+                        <a href="/listings/<%= listing._id %>" class="listing-link">
+                            <div class="box-container">
+                                <div class="box">
+                                    <div class="image">
+                                        <img src="/images/<%= listing.image %>" alt="">
+                                    </div>
+                                    <div class="content">
+                                        <h2>
+                                            <%= listing.title %>
+                                        </h2>
+                                        <div class="price">&#8377; <%= listing.price %>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <% } %>
                 </div>
-            </div>
+            </section>
 
-            <div class="box-pair">
-                <div class="box">
-                    <img src="./Img_files/index imgs/drawing.jpg" alt="Room Img">
-                    <h2 class="h-secondary">Consultation</h2>
-                    <p class="center">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse atque
-                        expedita,Lorem
-                        ipsum dolor sit amet consectetur adipisicing elit. Eaque </p>
+
+
+            <!-- footer starts here -->
+            <footer>
+                <div class="row">
+                    <div class="col">
+                        <img src="./Img_files/logo.jpg" alt="logo"><br>
+                        <p>
+                            "Transform your space with our curated
+                            collection of stylish and functional furniture.
+                            From cozy seating to elegant accents, discover
+                            the perfect pieces to elevate your home. Shop
+                            now for quality craftsmanship and timeless designs."
+                        </p>
+                    </div>
+                    <div class="col">
+                        <h3>Office <div class="underline"></div>
+                        </h3>
+                        <p>Yet to be filled</p>
+                        <p class="email-id">homebeing@outlook.com</p>
+                        <h4>+91 - xxxxx xxxxx</h4>
+                    </div>
+                    <div class="col">
+                        <h3>Links <div class="underline"></div>
+                        </h3>
+                        <ul>
+                            <li><a href="/home">Home</a></li>
+                            <li><a href="/listings">Store</a></li>
+                            <li><a href="/blogs">Blogs</a></li>
+                            <li><a href="/cart">Cart</a></li>
+                            <li><a href="/contact">Contacts Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="col">
+                        <h3>Newsletter <div class="underline"></div>
+                        </h3>
+                        <form>
+                            <i class='bx bx-envelope'></i>
+                            <input type="email" placeholder="enter your email id" required>
+                            <button type="submit"><i class='bx bxs-right-arrow-alt'></i></button>
+                        </form>
+                        <div class="social-icons">
+                            <i class='bx bxl-facebook-square'></i>
+                            <i class='bx bxl-whatsapp'></i>
+                            <i class='bx bxl-twitter'></i>
+                            <i class='bx bxl-instagram'></i>
+                        </div>
+                    </div>
                 </div>
-            </div>
+                <hr>
+                <p class="copyright"> Home Being 2024 - All Rights Reserved</p>
+            </footer>
 
-        </div>
-    </section>
-
-    <section class="products" id="products">
-      <h1 class="h-primary center">
-          <div class="sec-head"> Latest <span>Products</span></div>
-      </h1>
-      <div class="product-container">
-          <% for(let listing of allListings) { %>
-          <a href="/listings/<%= listing._id %>" class="listing-link">
-              <div class="box-container">
-                  <div class="box">
-                      <div class="image">
-                          <img src="/images/<%= listing.image %>" alt="">
-                      </div>
-                      <div class="content">
-                          <h2><%= listing.title %></h2>
-                          <div class="price">&#8377; <%= listing.price %></div>
-                      </div>
-                  </div>
-              </div>
-          </a>
-          <% } %>
-      </div>
-  </section>
-  
-
-
-    <!-- footer starts here -->
-    <footer>
-      <div class="row">
-          <div class="col">
-              <img src="./Img_files/logo.jpg" alt="logo"><br>
-              <p>
-                  "Transform your space with our curated
-                  collection of stylish and functional furniture.
-                  From cozy seating to elegant accents, discover
-                  the perfect pieces to elevate your home. Shop
-                  now for quality craftsmanship and timeless designs."
-              </p>
-          </div>
-          <div class="col">
-              <h3>Office <div class="underline"></div>
-              </h3>
-              <p>Yet to be filled</p>
-              <p class="email-id">homebeing@outlook.com</p>
-              <h4>+91 - xxxxx xxxxx</h4>
-          </div>
-          <div class="col">
-              <h3>Links <div class="underline"></div>
-              </h3>
-              <ul>
-                  <li><a href="/home">Home</a></li>
-                  <li><a href="/listings">Store</a></li>
-                  <li><a href="/blogs">Blogs</a></li>
-                  <li><a href="/cart">Cart</a></li>
-                  <li><a href="/contact">Contacts Us</a></li>
-              </ul>
-          </div>
-          <div class="col">
-              <h3>Newsletter <div class="underline"></div>
-              </h3>
-              <form>
-                  <i class='bx bx-envelope'></i>
-                  <input type="email" placeholder="enter your email id" required>
-                  <button type="submit"><i class='bx bxs-right-arrow-alt'></i></button>
-              </form>
-              <div class="social-icons">
-                  <i class='bx bxl-facebook-square'></i>
-                  <i class='bx bxl-whatsapp'></i>
-                  <i class='bx bxl-twitter'></i>
-                  <i class='bx bxl-instagram'></i>
-              </div>
-          </div>
-      </div>
-      <hr>
-      <p class="copyright"> Home Being 2024 - All Rights Reserved</p>
-  </footer>
-
-</body>
+    </body>
 
 </html>
 

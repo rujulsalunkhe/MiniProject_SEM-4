@@ -18,19 +18,21 @@
             <img src="/Img_files/logo w name.png" alt="logo">
         </div>
         <div class="right">
-  
+
             <ul>
                 <li><a class="item" href="/home"><span id="item-inuse">Home</span></a></li>
                 <li><a class="item " href="/listings">Store</a></li>
                 <li><a class="item" href="/blogs">Blogs</a></li>
                 <li><a class="item" href="/cart">Cart</a></li>
                 <li><a class="item" href="/contact">Contact Us</a></li>
-             <% if(!currUser) { %>
-                <a href="/login" id="getq">Login <img id="arrow" src="./Img_files/maki_arrow.svg" alt="">
-                <% } %>  <% if(currUser) { %>
-                    <a href="/logout" id="getq">Logout <img id="arrow" src="./Img_files/maki_arrow.svg" alt="">
+                <% if(!currUser) { %>
+                    <a href="/login" id="getq">Login <img id="arrow" src="./Img_files/maki_arrow.svg" alt="">
                         <% } %>
-                    </a>
+                            <% if(currUser) { %>
+                                <a href="/logout" id="getq">Logout <img id="arrow" src="./Img_files/maki_arrow.svg"
+                                        alt="">
+                                    <% } %>
+                                </a>
             </ul>
         </div>
     </nav>
@@ -71,28 +73,31 @@
         <div id="services">
             <div class="box">
                 <a href="/category/livingroom">
-                <img src="./Img_files/Store_home.jpeg" alt="Room Img">
-                <h2 class="h-secondary ">Living Room</h2>
-                <p class="center">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse atque expedita,Lorem
-                    ipsum dolor sit amet consectetur adipisicing elit. Id </p>
+                    <img src="./Img_files/Store_home.jpeg" alt="Room Img">
+                    <h2 class="h-secondary ">Living Room</h2>
+                    <p class="center">Dive into the heart of comfort and style! Click below to discover our curated
+                        selection of living room essentials. From plush sofas to elegant décor, transform your space
+                        into a sanctuary of relaxation and entertainment.</p>
                 </a>
             </div>
             <div class="box">
                 <a href="/category/kitchen">
-                <img src="./Img_files/index imgs/kitchen.jpg" alt="Room Img">
-                <h2 class="h-secondary ">Kitchen</h2>
-                <p class="center">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse atque expedita,Lorem
-                    ipsum dolor sit amet consectetur adipisicing elit. </p>
+                    <img src="./Img_files/index imgs/kitchen.jpg" alt="Room Img">
+                    <h2 class="h-secondary ">Kitchen</h2>
+                    <p class="center">Unlock the gateway to your dream kitchen! Click below to explore our wide range of
+                        kitchen products designed to make cooking a breeze. From utensils to appliances, find everything
+                        you need to create delicious meals and unforgettable memories. </p>
                 </a>
             </div>
             <div class="box">
                 <img src="./Img_files/index imgs/room.jpg" alt="Room Img">
                 <h2 class="h-secondary">Bedroom</h2>
-                <p class="center">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse atque expedita,Lorem
-                    ipsum dolor sit amet consectetur adipisicing elit. Eaque </p>
+                <p class="center">Indulge in the art of relaxation! Click below to explore our collection of bedroom
+                    essentials designed to create your personal haven. From cozy bedding to tranquil accents, make your
+                    bedroom a sanctuary for rest and rejuvenation. </p>
             </div>
 
-            <div class="box">
+            <!-- <div class="box">
                 <img src="./Img_files/index imgs/drawing.jpg" alt="Room Img">
                 <h2 class="h-secondary">Consultation</h2>
                 <p class="center">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse atque expedita,Lorem
@@ -104,7 +109,7 @@
                 <p class="center">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse atque expedita,Lorem
                     ipsum dolor sit amet consectetur adipisicing elit. Eaque </p>
             </div>
-        </div>
+        </div> -->
     </section>
 
     <section class="why-choose-us">
