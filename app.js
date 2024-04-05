@@ -15,35 +15,35 @@ const passport = require("passport");
 const LocalStrategy = require("passport-local");
 const User = require("./models/user.js");
 const flash = require("connect-flash");
-const {isLoggedIn, savedRedirectUrl} = require("./middleware.js");
+const { isLoggedIn, savedRedirectUrl } = require("./middleware.js");
 
-const MONGO_URL="mongodb+srv://atharva:home@cluster0.uddossk.mongodb.net/";
-main().then( () => {
+const MONGO_URL = "mongodb+srv://atharva:home@cluster0.uddossk.mongodb.net/";
+main().then(() => {
     console.log("Connected to DB");
 })
-.catch((err) => {
-    console.log(err);
-});
+    .catch((err) => {
+        console.log(err);
+    });
 async function main() {
     await mongoose.connect(MONGO_URL);
 }
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
-app.use(express.urlencoded({extended: true}));
+app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
-app.engine('ejs' , ejsMate);
+app.engine('ejs', ejsMate);
 app.use(express.static(path.join(__dirname, "/public")));
 
-const sessionOptions ={
-secret: "mysupersecretcode",
-resave: false,
-saveUninitialized: true,
-cookie: {
-    expires: Date.now() + 7 * 24 * 60 * 60 * 1000,
-    maxAge: 7 * 24 * 60 * 60 * 1000,
-    httpOnly: true,
-},
+const sessionOptions = {
+    secret: "mysupersecretcode",
+    resave: false,
+    saveUninitialized: true,
+    cookie: {
+        expires: Date.now() + 7 * 24 * 60 * 60 * 1000,
+        maxAge: 7 * 24 * 60 * 60 * 1000,
+        httpOnly: true,
+    },
 };
 
 app.get("/", (req, res) => {
@@ -81,26 +81,26 @@ app.use((req, res, next) => {
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-      cb(null, 'public/images/') // specify the destination directory for uploads
+        cb(null, 'public/images/') // specify the destination directory for uploads
     },
     filename: function (req, file, cb) {
-      // specify the filename for uploaded files
-      cb(null, Date.now() + '-' + file.originalname)
+        // specify the filename for uploaded files
+        cb(null, Date.now() + '-' + file.originalname)
     }
-  });
-  
-  const upload = multer({ storage: storage });
+});
+
+const upload = multer({ storage: storage });
 
 /////////////////          BLOGS         ///////////////////////////////////////////
 
 //Index Route
-app.get("/blogs", async (req,res) => {
+app.get("/blogs", async (req, res) => {
     const allBlogs = await Blog.find({});
-    res.render("blogs/blogs.ejs",{allBlogs});
+    res.render("blogs/blogs.ejs", { allBlogs });
 });
 
 
-    //new route
+//new route
 app.get("/blogs/new", isLoggedIn, (req, res) => {
     res.render("blogs/new.ejs");
 });
@@ -141,10 +141,10 @@ app.post("/blogs", upload.single('blogs[image]'), async (req, res, next) => {
             image: req.file.filename, // Save the filename to the database
             date: req.body.blogs.date
         });
-        
+
         await newBlog.save();
         res.redirect("/blogs");
-    } catch(err) {
+    } catch (err) {
         next(err);
     }
 });
@@ -152,26 +152,26 @@ app.post("/blogs", upload.single('blogs[image]'), async (req, res, next) => {
 
 
 //Edit route
-app.get("/blogs/:id/edit", isLoggedIn, async(req,res) => {
-    let {id} = req.params;
+app.get("/blogs/:id/edit", isLoggedIn, async (req, res) => {
+    let { id } = req.params;
     const Blog = await Blog.findById(id); // Use Blogs model here
-    res.render("blogs/edit.ejs", {Blog}); // Pass 'blog' instead of 'blogs'
+    res.render("blogs/edit.ejs", { Blog }); // Pass 'blog' instead of 'blogs'
 });
 
 
 //Update route
 app.put("/blogs/:id", isLoggedIn, async (req, res) => {
-    let {id} = req.params;
-    await Blogs.findByIdAndUpdate(id, {...req.body.listing});
+    let { id } = req.params;
+    await Blogs.findByIdAndUpdate(id, { ...req.body.listing });
     res.redirect("/blogs");
 });
 
 //Delete route
-app.delete("/blogs/:id",isLoggedIn, async (req, res) =>{
-    let {id} = req.params;
-   let deletedBlog = await Blogs.findByIdAndDelete(id); // Use Blogs model here
-   console.log(deletedBlog);
-   res.redirect("/blogs/");
+app.delete("/blogs/:id", isLoggedIn, async (req, res) => {
+    let { id } = req.params;
+    let deletedBlog = await Blogs.findByIdAndDelete(id); // Use Blogs model here
+    console.log(deletedBlog);
+    res.redirect("/blogs/");
 });
 
 
@@ -180,12 +180,12 @@ app.delete("/blogs/:id",isLoggedIn, async (req, res) =>{
 
 ////////////////////////////////////////////////////////////
 //Index Route
-app.get("/listings", async (req,res) => {
+app.get("/listings", async (req, res) => {
     const allListings = await Listing.find({});
-    res.render("listings/index.ejs",{allListings});
-    });
+    res.render("listings/index.ejs", { allListings });
+});
 
-    //new route
+//new route
 app.get("/listings/new", isLoggedIn, (req, res) => {
     res.render("listings/new.ejs");
 });
@@ -196,10 +196,10 @@ app.get("/listings/new", isLoggedIn, (req, res) => {
 
 //Show Route
 app.get("/listings/:id", async (req, res) => {
-    let {id} = req.params;
+    let { id } = req.params;
     const listing = await Listing.findById(id).populate("reviews");
     console.log(listing);
-    res.render("Listings/show.ejs", {listing});
+    res.render("Listings/show.ejs", { listing });
 });
 
 //Create Route
@@ -227,32 +227,32 @@ app.post("/listings", upload.single('listing[image]'), async (req, res, next) =>
         await newListing.save();
         req.flash("Success", "New Listing created!");
         res.redirect("/listings");
-    } catch(err) {
+    } catch (err) {
         next(err);
     }
 });
 
 
 //Edit route
-app.get("/listings/:id/edit", isLoggedIn, async(req,res) => {
-    let {id} = req.params;
+app.get("/listings/:id/edit", isLoggedIn, async (req, res) => {
+    let { id } = req.params;
     const listing = await Listing.findById(id);
-    res.render("listings/edit.ejs", {listing});
+    res.render("listings/edit.ejs", { listing });
 });
 
 //Update route
 app.put("/listings/:id", isLoggedIn, async (req, res) => {
-    let {id} = req.params;
-    await Listing.findByIdAndUpdate(id, {...req.body.listing});
+    let { id } = req.params;
+    await Listing.findByIdAndUpdate(id, { ...req.body.listing });
     res.redirect("/listings");
 });
 
 //Delete route
-app.delete("/listings/:id",isLoggedIn, async (req, res) =>{
-    let {id} = req.params;
-   let deletedListing = await Listing.findByIdAndDelete(id)
-   console.log(deletedListing);
-   res.redirect("/listings/");
+app.delete("/listings/:id", isLoggedIn, async (req, res) => {
+    let { id } = req.params;
+    let deletedListing = await Listing.findByIdAndDelete(id)
+    console.log(deletedListing);
+    res.redirect("/listings/");
 });
 
 //Reviews
@@ -293,7 +293,7 @@ app.post("/listings/:id/reviews", async (req, res) => {
 //    res.send("Successful testing");
 // });
 
-app.use((err, req, res, next) =>{
+app.use((err, req, res, next) => {
     res.send("Something went Wrong!");
 });
 
@@ -303,10 +303,10 @@ app.use((err, req, res, next) =>{
 
 //////////////// Home Page //////////////////
 
-app.get("/home", async (req,res) => {
+app.get("/home", async (req, res) => {
     const allListings = await Listing.find({});
-    res.render("home/home.ejs",{allListings});
-    });
+    res.render("home/home.ejs", { allListings });
+});
 
 app.use("/Img_files", express.static('Img_files'));
 
@@ -324,10 +324,10 @@ app.get("/signup", async (req, res) => {
 
 });
 
-app.get("/blogs", async (req,res) => {
+app.get("/blogs", async (req, res) => {
     const allListings = await Listing.find({});
-    res.render("blogs/blogs.ejs",{allListings});
-    });
+    res.render("blogs/blogs.ejs", { allListings });
+});
 
 
 /////////////// Add to Cart ////////////////  
@@ -355,28 +355,28 @@ app.get("/signup", (req, res) => {
     res.render("login/signup.ejs");
 });
 
-app.post("/signup", savedRedirectUrl, async(req,res) => {
-    try{
-        let{username, email, password}= req.body;
-        const newUser = new User({email, username});
-    const registeredUser = await User.register(newUser, password);
-    console.log(registeredUser);
-    req.login(registeredUser, (err) => {
-        if(err) {
-            return next(err);
-        }
-        let redirectUrl = res.locals.redirectUrl || "/listings";
-        res.redirect(redirectUrl);
-    });
-    } catch(e) {
+app.post("/signup", savedRedirectUrl, async (req, res) => {
+    try {
+        let { username, email, password } = req.body;
+        const newUser = new User({ email, username });
+        const registeredUser = await User.register(newUser, password);
+        console.log(registeredUser);
+        req.login(registeredUser, (err) => {
+            if (err) {
+                return next(err);
+            }
+            let redirectUrl = res.locals.redirectUrl || "/listings";
+            res.redirect(redirectUrl);
+        });
+    } catch (e) {
         res.redirect("/signup");
     }
 });
 
 app.get("/logout", (req, res, next) => {
     req.logout((err) => {
-        if(err) {
-           return next(err);
+        if (err) {
+            return next(err);
         }
         res.redirect("/listings");
     });
@@ -384,7 +384,7 @@ app.get("/logout", (req, res, next) => {
 
 //login//
 
-app.get("/login", (req,res) => {
+app.get("/login", (req, res) => {
     res.render("login/login.ejs");
 })
 
@@ -395,66 +395,66 @@ app.post(
     }),
     async (req, res) => {
         res.redirect("/listings");
-    }      
+    }
 );
 
 
 
 /////////////// Contact ////////////////  
 
-app.get("/contact", async (req,res) => {
+app.get("/contact", async (req, res) => {
     const allListings = await Listing.find({});
-    res.render("contact/contact.ejs",{allListings});
-    });
+    res.render("contact/contact.ejs", { allListings });
+});
 
-    app.post("/contact", async (req, res, next) => {
-        try {
-            // Create a new Contact instance using the entire request body
-            const newContact = new Contact({
-                name: req.body.name,
-                email: req.body.email,
-                phone: req.body.phone,
-                subject: req.body.subject,
-                message: req.body.message
-            });
-            
-    
-            // Save the new contact entry to the database
-            await newContact.save();
-    
-            // Redirect the user after successfully saving the contact
-            res.redirect("/contact");
-        } catch(err) {
-            // Pass any errors to the error handling middleware
-            next(err);
-        }
-    });
-    
+app.post("/contact", async (req, res, next) => {
+    try {
+        // Create a new Contact instance using the entire request body
+        const newContact = new Contact({
+            name: req.body.name,
+            email: req.body.email,
+            phone: req.body.phone,
+            subject: req.body.subject,
+            message: req.body.message
+        });
 
-    ///////////category//////////////
-    app.get('/category/livingroom', async (req, res) => {
-        try {
-            const category = 'LivingRoom';
-            const listings = await Listing.find({ category: category });
-            res.render('category/livingroom.ejs', { category: category, listings: listings });
-        } catch (err) {
-            console.error('Error fetching living room listings:', err);
-            res.status(500).send('Error fetching living room listings');
-        }
-    });
 
-    app.get('/category/kitchen', async (req, res) => {
-        try {
-            const category = 'Kitchen';
-            const listings = await Listing.find({ category: category });
-            res.render('category/kitchen.ejs', { category: category, listings: listings });
-        } catch (err) {
-            console.error('Error fetching kitchen listings:', err);
-            res.status(500).send('Error fetching kitchen listings');
-        }
-    });
-    
-    
-    app.listen(3000, () =>{
-        console.log("Server is listening to port 3000");
-    });
+        // Save the new contact entry to the database
+        await newContact.save();
+
+        // Redirect the user after successfully saving the contact
+        res.redirect("/contact");
+    } catch (err) {
+        // Pass any errors to the error handling middleware
+        next(err);
+    }
+});
+
+
+///////////category//////////////
+app.get('/category/livingroom', async (req, res) => {
+    try {
+        const category = 'LivingRoom';
+        const listings = await Listing.find({ category: category });
+        res.render('category/livingroom.ejs', { category: category, listings: listings });
+    } catch (err) {
+        console.error('Error fetching living room listings:', err);
+        res.status(500).send('Error fetching living room listings');
+    }
+});
+
+app.get('/category/kitchen', async (req, res) => {
+    try {
+        const category = 'Kitchen';
+        const listings = await Listing.find({ category: category });
+        res.render('category/kitchen.ejs', { category: category, listings: listings });
+    } catch (err) {
+        console.error('Error fetching kitchen listings:', err);
+        res.status(500).send('Error fetching kitchen listings');
+    }
+});
+
+
+app.listen(3000, () => {
+    console.log("Server is listening to port 3000");
+});
