@@ -158,6 +158,10 @@ body {
     font-size: 1.6rem;
 }
 
+.storebox {
+    color: black;
+}
+
 /* Services Section  */
 #services {
     display: flex;
@@ -489,11 +493,13 @@ hr {
 .product-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center; /* Adjusted */
+    justify-content: center;
+    /* Adjusted */
 }
 
 .box-container {
-    width: calc(33.333% - 20px); /* Adjust as needed for three columns */
+    width: calc(33.333% - 20px);
+    /* Adjust as needed for three columns */
     margin-bottom: 20px;
     /* Other styles for box container */
 }
@@ -510,6 +516,6 @@ hr {
 
 
 a {
-    text-decoration: none; /* Remove underline */
+    text-decoration: none;
+    /* Remove underline */
 }
-
